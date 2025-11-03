@@ -32,3 +32,15 @@ DB_PASS = os.getenv("DB_PASS")
 # Creating SQLAlchemy Engine to upload the Data to Neon PostgreSQL Database
 engine = create_engine(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}?sslmode=require&channel_binding=require", pool_pre_ping=True)
 logging.info("SQLAlchemy Engine created successfully")
+
+# ---------------- Check if Table Exists ----------------
+
+# Check if tables already exists in the Neon PostgreSQL Database
+inspector = inspect(engine)
+existing_tables = inspector.get_table_names()
+
+# If all required tables exist, skip ETL Setup
+if set(["customers", "products", "orders"]).issubset(existing_tables):
+    logging.info("Tables already exist. Skipping ETL setup.")
+else:
+    logging.info("Tables do not exist. Running ETL setup...")
