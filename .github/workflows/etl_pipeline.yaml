@@ -84,3 +84,11 @@ jobs:
           git add -A views/
           git commit -m "chore: update csv export from views on $(date -u +'%Y-%m-%d')" -m "[skip ci]" || echo "No changes to commit"
           git push
+
+      # ---------------- Step 10 : Save Logs as Artifacts ----------------
+      # Stores Logs in the workflow run, downloadable from GitHub
+      - name: Upload Logs as Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: etl-logs
+          path: logs/*.log
