@@ -17,3 +17,12 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
                         logging.FileHandler(log_file, mode="a"),
                         logging.StreamHandler()
                     ])
+
+# Loading Environment File
+load_dotenv()
+
+# Loading Database Credentials from Environment File
+DB_HOST = os.getenv("DB_HOST")
+DB_NAME = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_PASS = os.getenv("DB_PASS")
