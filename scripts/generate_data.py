@@ -34,3 +34,17 @@ DB_PASS = os.getenv("DB_PASS")
 # Creating SQLAlchemy Engine to upload the Data to Neon PostgreSQL Database
 engine = create_engine(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}?sslmode=require&channel_binding=require", pool_pre_ping=True)
 logging.info("SQLAlchemy Engine created successfully")
+
+# ---------------- Generating Random Customers Data ---------------- 
+
+# Generating New Customers Data Randomly
+from utils.generate_random_data import random_customers_data
+customers = random_customers_data(20, 40)
+logging.info("Random customers data generated successfully")
+
+# ---------------- Generating Random Orders Data ---------------- 
+
+# Generating New Orders Data Randomly
+from utils.generate_random_data import random_orders_data
+orders = random_orders_data(60, 80)
+logging.info("Random orders data generated successfully")
