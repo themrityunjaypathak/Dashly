@@ -48,3 +48,22 @@ logging.info("Random customers data generated successfully")
 from utils.generate_random_data import random_orders_data
 orders = random_orders_data(60, 80)
 logging.info("Random orders data generated successfully")
+
+# ---------------- Data Cleaning ---------------- 
+
+# Handling Duplicate Data
+from utils.drop_duplicates import remove_duplicates
+customers = remove_duplicates(customers)
+orders = remove_duplicates(orders)
+
+# Standardizing Column Names
+from utils.standardize_columns import standardize_column_names
+customers = standardize_column_names(customers)
+orders = standardize_column_names(orders)
+
+# Optimizing DataFrame
+from utils.data_preprocessor import optimize_customers, optimize_orders
+customers = optimize_customers(customers)
+orders = optimize_orders(orders)
+
+logging.info("Data cleaned and optimized successfully")
