@@ -49,3 +49,19 @@ else:
     from utils.read_data import load_csv
     df = load_csv("data", "sales_data.csv")
     logging.info("CSV file loaded successfully")
+
+    # ---------------- Data Cleaning ---------------- 
+
+    # Handling Duplicate Data
+    from utils.drop_duplicates import remove_duplicates
+    df = remove_duplicates(df)
+
+    # Standardizing Column Names
+    from utils.standardize_columns import standardize_column_names
+    df = standardize_column_names(df)
+
+    # Optimizing DataFrame
+    from utils.data_preprocessor import optimize_dataframe
+    df = optimize_dataframe(df)
+
+    logging.info("Data cleaned and optimized successfully")
