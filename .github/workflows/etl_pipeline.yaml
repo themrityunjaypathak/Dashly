@@ -10,3 +10,8 @@ on:
 # ---------------- Authority to update Repository ----------------
 permissions:
   contents: write
+
+# ---------------- Set of steps to run ----------------
+jobs:
+  data-pipeline:
+    runs-on: ubuntu-latest   # Use a Linux VM for the Job
