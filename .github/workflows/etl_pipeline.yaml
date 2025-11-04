@@ -60,3 +60,9 @@ jobs:
       - name: Run Views Script
         run: |
           python scripts/create_views.py
+
+      # ---------------- Step 7 : Export Views to CSV ----------------
+      # Exports SQL views as CSVs inside the `views` folder
+      - name: Run Export Views Script
+        run: |
+          python scripts/export_views.py
