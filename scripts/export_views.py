@@ -34,3 +34,28 @@ DB_PASS = os.getenv("DB_PASS")
 # Creating SQLAlchemy Engine to upload the Data to Neon PostgreSQL Database
 engine = create_engine(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}?sslmode=require&channel_binding=require", pool_pre_ping=True)
 logging.info("SQLAlchemy Engine created successfully")
+
+# ---------------- Exporting Views as CSV Files ---------------- 
+
+# List of Views to Export
+views = ["segment_wise_sales_and_profit",
+         "region_wise_sales_and_profit",
+         "month_wise_sales_and_profit",
+         "top_customers_by_sales",
+         "shipping_performance",
+         "overall_sales_performance",
+         "state_wise_sales_and_customer_base",
+         "segment_wise_monthly_sales_and_profit",
+         "region_wise_monthly_sales",
+         "overall_customers_performance",
+         "avg_discount_per_order_per_customer",
+         "category_wise_monthly_sales_and_profit",
+         "sub_category_wise_sales_and_profit",
+         "category_wise_sales_profit_and_orders",
+         "state_wise_most_purchased_sub_category"
+        ]
+
+# Exporting SQL Views as CSV Files
+from utils.export_views import export_views_as_csv
+export_views_as_csv(views, engine)
+logging.info("Views exported as CSVs successfully")
