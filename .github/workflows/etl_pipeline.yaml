@@ -15,3 +15,9 @@ permissions:
 jobs:
   data-pipeline:
     runs-on: ubuntu-latest   # Use a Linux VM for the Job
+
+    env: # Shared env variables available to all scripts
+      DB_USER: ${{ secrets.DB_USER }}
+      DB_PASS: ${{ secrets.DB_PASS }}
+      DB_HOST: ${{ secrets.DB_HOST }}
+      DB_NAME: ${{ secrets.DB_NAME }}
