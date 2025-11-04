@@ -74,3 +74,13 @@ jobs:
         with:
           name: exported-views
           path: views/*.csv
+
+      # ---------------- Step 9 : Commit CSVs to Repository ----------------
+      # Updates repository with the latest CSVs so they are visible directly
+      - name: Commit and Push CSVs
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A views/
+          git commit -m "chore: update csv export from views on $(date -u +'%Y-%m-%d')" -m "[skip ci]" || echo "No changes to commit"
+          git push
