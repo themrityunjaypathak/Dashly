@@ -21,3 +21,11 @@ jobs:
       DB_PASS: ${{ secrets.DB_PASS }}
       DB_HOST: ${{ secrets.DB_HOST }}
       DB_NAME: ${{ secrets.DB_NAME }}
+
+    steps:
+      # ---------------- Step 1 : Checkout Code ----------------
+      # This pulls your repository into the GitHub Runner VM
+      - name: Checkout repository
+        uses: actions/checkout@v3   
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
