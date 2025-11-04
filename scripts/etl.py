@@ -127,3 +127,16 @@ else:
     # Orders Table
     orders_cols = ["order_id", "order_date", "customer_id", "product_id", "ship_mode", "ship_date", "sales", "quantity", "discount", "profit"]
     orders = df[orders_cols].drop_duplicates(subset="order_id")
+
+    # Truncate Tables to avoid uploading Duplicate Data
+    with engine.begin() as conn:
+        conn.execute(text("TRUNCATE TABLE customers CASCADE;"))
+        conn.execute(text("TRUNCATE TABLE products CASCADE;"))
+        conn.execute(text("TRUNCATE TABLE orders CASCADE;"))
+    logging.info("Tables truncated successfully")
+
+    # Appending data to the tables in Neon PostgreSQL Database
+    customers.to_sql("customers", engine, if_exists="append", index=False)
+    products.to_sql("products", engine, if_exists="append", index=False)
+    orders.to_sql("orders", engine, if_exists="append", index=False)
+    logging.info("Initial data uploaded to Neon PostgreSQL Database successfully")
