@@ -54,3 +54,9 @@ jobs:
       - name: Run Generate Data Script
         run: |
           python scripts/generate_data.py
+
+      # ---------------- Step 6 : Run Views Script ----------------
+      # Creates or refreshes SQL views in Neon Database
+      - name: Run Views Script
+        run: |
+          python scripts/create_views.py
