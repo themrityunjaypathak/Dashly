@@ -1099,7 +1099,7 @@ It includes pipeline performance metrics like runtime, automation frequency and 
 | :----------------------------------- | :------------------------------------------------ | :--------------- |
 | **Set up job**                       | Initializes GitHub Actions Environment            |                1s |
 | **Checkout Repository**              | Pulls repository code into the Runner             |                1s |
-| **Set up Python**                    | Installs Python Environment (v3.10)               |                0s |
+| **Set up Python**                    | Installs Python Environment (v3.13.0)             |                0s |
 | **Install dependencies**             | Installs libraries from `requirements.txt`        |               22s |
 | **Run ETL Script**                   | Extracts, transforms & loads data into PostgreSQL |                3s |
 | **Run Generate Data Script**         | Generates new synthetic customers & orders data   |                4s |
