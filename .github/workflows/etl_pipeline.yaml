@@ -4,7 +4,7 @@ name: ETL Pipeline Automation
 # ---------------- When should it run? ----------------
 on:
   schedule:
-    - cron: "0 0 * * *"    # Run the workflow daily at 12:00 AM UTC
+    - cron: "30 4 * * *"   # Run the workflow daily at 10:00 AM
   workflow_dispatch:       # Allow manual run from GitHub UI
 
 # ---------------- Authority to update Repository ----------------
