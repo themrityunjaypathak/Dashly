@@ -1,7 +1,7 @@
 <h2 align="center">Dashly : Live Sales Dashboard</h2>
 
 <a href="https://app.powerbi.com/view?r=eyJrIjoiZTgxODBhYmMtYjc1Zi00YjVkLWIyZDItZDYxY2RjZmIwNGY5IiwidCI6ImZhYjAyYzVkLTYxYjYtNGIxMi05ZTY2LTdhMDhkOWY0ZmNjMSJ9&pageName=5b9aaf645951a59cacdc">
-<img title="Dashly" src="https://github.com/user-attachments/assets/b203f044-f792-4a50-88fd-3320a4337f66">
+<img title="Dashly" src="https://github.com/user-attachments/assets/be84d954-9d52-4692-8a77-d40853a91d61">
 </a>
 
 ## Table of Contents
@@ -227,7 +227,7 @@ The ER (Entity-Relationship) Diagram visually represents how different tables in
 - **Orders Table → Central Table**
   - Serves as the main transactional table, linking customers and products.
 
-<img width="500px" title="ER Diagram" src="https://github.com/user-attachments/assets/8467aea9-ff19-4d05-b531-ddcf584fb9e5">
+<img width="500px" title="ER Diagram" src="https://github.com/user-attachments/assets/e8767755-356f-4f92-9820-cf4438c8cbc5">
 
 <hr>
 
@@ -1059,7 +1059,7 @@ generate_data.py → create_views.py → Power BI Refresh → New Insights
 
 This ensures that the Power BI Dashboard always display the latest insights automatically.
 
-<img title="ETL Pipeline" src="https://github.com/user-attachments/assets/dc7af7e0-7f9c-4fe2-ad51-5fab87bfb141">
+<img title="ETL Pipeline" src="https://github.com/user-attachments/assets/a4a54ad4-eace-4f3c-b90d-53bb0983de00">
 
 <hr>
 
@@ -1092,7 +1092,7 @@ It includes pipeline performance metrics like runtime, automation frequency and 
 > [!NOTE]
 > This setup ensures that the latest data is always available for Power BI dashboards, no manual refresh required.
 
-<img title="Automation & Scheduling" src="https://github.com/user-attachments/assets/4dcfcd5e-f8e4-4892-8735-90315eec5ec9">
+<img title="Automation & Scheduling" src="https://github.com/user-attachments/assets/0708e2eb-6511-4962-bb36-2c77752a8f47">
 
 #### 3. Runtime Performance
 | **Workflow Step**                    | **Description**                                   | **Runtime (sec)** |
@@ -1117,7 +1117,7 @@ It includes pipeline performance metrics like runtime, automation frequency and 
 > 
 > The ETL pipeline runs within a minute, automatically refreshing the dashboard data daily without manual effort.
 
-<img title="Runtime Performance" src="https://github.com/user-attachments/assets/c4392397-148d-4137-a9a2-9c02e304c174">
+<img title="Runtime Performance" src="https://github.com/user-attachments/assets/8dcf62d2-9bb8-4ef4-b0c4-292115dc5079">
 
 #### 4. Error Handling and Logging
 | **Aspect**           | **Implementation Details**                                            |
@@ -1143,7 +1143,7 @@ It includes pipeline performance metrics like runtime, automation frequency and 
 >
 > The pipeline runs fully unattended, providing consistent daily data updates and automatic Power BI refreshes.
 
-<img title="Reliability and Stability" src="https://github.com/user-attachments/assets/a413c306-0e63-4e48-9a27-670dad73de20">
+<img title="Reliability and Stability" src="https://github.com/user-attachments/assets/20dbee9f-b68e-4a1a-b512-4ed7f443d587">
 
 <hr>
 
@@ -1285,33 +1285,33 @@ It includes pipeline performance metrics like runtime, automation frequency and 
 
 ### 1. How to create a free PostgreSQL Database on Neon?
 - Open [Neon](https://neon.com/) in your browser
-<img title="Neon" src="https://github.com/user-attachments/assets/8725e115-5cf9-4444-8f4e-08e6f5322790">
+<img title="Neon" src="https://github.com/user-attachments/assets/4a5b08e6-290b-4fb7-9820-3afd0b599e03">
 &nbsp;
 
 - Login with GitHub/Google/Microsoft
-<img title="Login" src="https://github.com/user-attachments/assets/7035a1d3-deaa-4a23-a78f-6523ddb36301">
+<img title="Login" src="https://github.com/user-attachments/assets/657ccfaa-3c26-492a-9a5f-537f773c763e">
 &nbsp;
 
 - Create a New Project
-<img title="New Project" src="https://github.com/user-attachments/assets/fa94c6e5-6564-4cb8-a633-19df51f4177b">
+<img title="New Project" src="https://github.com/user-attachments/assets/dd9271db-e210-4ed0-aeaf-9ce337d06474">
 &nbsp;
 
 - Fill in the Project Details
-<img title="Project Details" src="https://github.com/user-attachments/assets/d6f85188-3866-4202-bb09-7520a1c187cd">
+<img title="Project Details" src="https://github.com/user-attachments/assets/fb2cf22c-6af9-4598-b207-351e4cd66f45">
 &nbsp;
 
 - New PostgreSQL Project is created in Neon Console
-<img title="Neon Console" src="https://github.com/user-attachments/assets/597d977f-fbb6-42b4-994d-e28234e3ea8b">
+<img title="Neon Console" src="https://github.com/user-attachments/assets/eb7f3663-9cda-49ae-94ff-0c866a1d9898">
 
 <hr>
 
 ### 2. How to connect Neon Database with Python via SQLAlchemy?
 - Open the newly created Project and Click Connect
-<img title="Project Console" src="https://github.com/user-attachments/assets/5795ecea-2f58-4ba7-8f70-d5ef4ee76776">
+<img title="Project Console" src="https://github.com/user-attachments/assets/17a7a0bb-ce46-4496-9f35-b6cce062c791">
 &nbsp;
 
 - Get the Connection String of your Database
-<img title="Connection String" src="https://github.com/user-attachments/assets/88f84104-91c3-46c8-a6a9-ba2e822180fb">
+<img title="Connection String" src="https://github.com/user-attachments/assets/bd0d5636-38e3-4b3f-abd8-0bc0589f3577">
 <p align="center">Image taken from Neon Documentation</p>
 
 - Understand the Connection String
@@ -1358,13 +1358,13 @@ engine = create_engine(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}?ss
 - Start with a new, empty report.
 - In the Home tab, click on Get Data then More...
 - This opens a list of all available data connectors.
-<img title="Getting Data in Power BI" src="https://github.com/user-attachments/assets/65ead7ce-5712-4c9c-b52a-5637a28a3ab0">
+<img title="Getting Data in Power BI" src="https://github.com/user-attachments/assets/a4c5d051-f4b7-4e45-a77c-06e4f13f23af">
 &nbsp;
 
 - In the list of connectors, scroll down and find PostgreSQL database.
 - Select it and click Connect.
 - This tells Power BI that you want to connect to a PostgreSQL database (like Neon).
-<img title="Selecting PostgreSQL Database" src="https://github.com/user-attachments/assets/d334b7a1-6225-444e-939d-156e54fb7b63">
+<img title="Selecting PostgreSQL Database" src="https://github.com/user-attachments/assets/f10c2f7a-40c8-4eb1-b475-0217e09b5c3d">
 &nbsp;
 
 - Power BI will prompt you for connection information.
@@ -1375,7 +1375,7 @@ DB_NAME=dbname
 ```
 - Fill in Host and Database name and Click ok.
 - This step connects Power BI directly to your Neon PostgreSQL Database.
-<img title="Connecting to PostgreSQL Database" src="https://github.com/user-attachments/assets/35beb951-fc5c-451c-9af6-979d1468d113">
+<img title="Connecting to PostgreSQL Database" src="https://github.com/user-attachments/assets/65f2b1c5-7759-41c4-8243-6f4b4879358e">
 &nbsp;
 
 <details>
@@ -1396,7 +1396,7 @@ DB_NAME=dbname
 
 - Once connected, you'll see a list of all available tables and views from your Neon database.
 - Select the ones you want to use in your report and Click Load.
-<img title="Loading Required Data" src="https://github.com/user-attachments/assets/39ea718d-1031-4ca2-b561-a991d3f031b9">
+<img title="Loading Required Data" src="https://github.com/user-attachments/assets/5fd32b9e-826c-4351-95f0-34ff712460fa">
 &nbsp;
 
 - Power BI is now connected to your Neon PostgreSQL database.
@@ -1409,17 +1409,17 @@ DB_NAME=dbname
 - Navigate to the repository that contains your workflow file (`.github/workflows/etl_pipeline.yml`).
 - This is where your ETL (Extract-Transform-Load) automation is defined.
 - On your repository's main page click Settings from the top navigation bar.
-<img title="Repository's Settings Page" src="https://github.com/user-attachments/assets/01598914-cbd6-4133-8916-a855977b4ebf">
+<img title="Repository's Settings Page" src="https://github.com/user-attachments/assets/55764fbc-2ec2-43e1-befa-3895c2c05d84">
 &nbsp;
 
 - In the left-hand sidebar of the Settings page, scroll down to find Secrets and Variables.
 - Click Actions to open the section where you can manage secrets used in GitHub Actions workflows.
-<img title="Secrets and Variables Section" src="https://github.com/user-attachments/assets/cf432996-8de5-4001-860c-7b2d128be840">
+<img title="Secrets and Variables Section" src="https://github.com/user-attachments/assets/72378122-db0e-446d-992f-3e6a6acfe1eb">
 &nbsp;
 
 - In the Actions section, click the New repository secret button.
 - This opens a window to add a new secret key-value pair.
-<img title="New Repository Secret" src="https://github.com/user-attachments/assets/ccc7a18f-26cd-4961-b143-1f940951c19c">
+<img title="New Repository Secret" src="https://github.com/user-attachments/assets/3bbf4e6b-a834-40c9-af7e-316f72921ebf">
 &nbsp;
 
 - Open your local `.env` file (this file contains environment variables like API keys, tokens, etc).
@@ -1429,7 +1429,7 @@ DB_NAME=dbname
 - Paste these into the GitHub form fields :
   - Name → enter the variable name
   - Secret → enter the variable value
-<img title="Add New Secret" src="https://github.com/user-attachments/assets/af76c615-ea92-48e1-9551-c909a15fe87d">
+<img title="Add New Secret" src="https://github.com/user-attachments/assets/1e701c66-ec31-4c0e-8fb8-21220b4f551f">
 &nbsp;
 
 - Your secrets are now securely stored in the repository.
@@ -1713,7 +1713,7 @@ jobs:
 - **User Experience**
     - Designed for clarity and smooth navigation so users can access key insights in one click.
 
-<img title="Home" src="https://github.com/user-attachments/assets/b203f044-f792-4a50-88fd-3320a4337f66">
+<img title="Home" src="https://github.com/user-attachments/assets/a15b8d82-a886-492f-af40-3d8d25ea22ad">
 
 <hr>
 
@@ -1740,7 +1740,7 @@ jobs:
   - Data View : `month_wise_sales_and_profit`
   - Purpose : Displays the month-wise trend of sales and profit to track seasonal performance and growth.
 
-<img title="Overview" src="https://github.com/user-attachments/assets/a5f2b769-7da8-4820-b3c7-6c4ff7f90a46">
+<img title="Overview" src="https://github.com/user-attachments/assets/5584efcc-c10a-40c0-b18c-18e907ea64df">
 
 <hr>
 
@@ -1764,7 +1764,7 @@ jobs:
   - Data View : `segment_wise_monthly_sales_and_profit`
   - Purpose : Visualizes monthly trends for sales and profit across different customer segments.
 
-<img title="Customers" src="https://github.com/user-attachments/assets/8a745128-5dfb-400c-817e-66d28e345718">
+<img title="Customers" src="https://github.com/user-attachments/assets/fd6944a8-59af-43e3-a78d-18b1f92386a4">
 
 <hr>
 
@@ -1801,7 +1801,7 @@ jobs:
     - Yellow (10-20%) → Moderate margin, progressing toward target.
     - Green (20-40%) → Healthy profit margin, close to or exceeding target.
 
-<img title="Products" src="https://github.com/user-attachments/assets/68518b8f-149a-458c-b7e4-aa124c935f1e">
+<img title="Products" src="https://github.com/user-attachments/assets/ccf6f4ad-4498-4d0b-9284-0c60feeb19c2">
 
 <hr>
 
