@@ -1,7 +1,39 @@
 <h2 align="center">Dashly : Live Sales Dashboard</h2>
 
+<p align="center">
+  <!-- Live Demo -->
+  <a href="https://app.powerbi.com/view?r=eyJrIjoiZTgxODBhYmMtYjc1Zi00YjVkLWIyZDItZDYxY2RjZmIwNGY5IiwidCI6ImZhYjAyYzVkLTYxYjYtNGIxMi05ZTY2LTdhMDhkOWY0ZmNjMSJ9&pageName=5b9aaf645951a59cacdc" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Demo-Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black" />
+  </a>
+
+  <!-- License -->
+  <a href="./LICENSE" target="_blank">
+    <img src="https://img.shields.io/badge/License-MIT-2ea44f?style=flat&logo=open-source-initiative&logoColor=white" />
+  </a>
+
+  <!-- Python -->
+  <a href="https://www.python.org/" target="_blank">
+    <img src="https://img.shields.io/badge/Python-v3.11-3776AB?style=flat&logo=python&logoColor=white" />
+  </a>
+
+  <!-- PostgreSQL -->
+  <a href="https://www.postgresql.org/" target="_blank">
+    <img src="https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=flat&logo=postgresql&logoColor=white" />
+  </a>
+
+  <!-- SQLAlchemy -->
+  <a href="https://www.sqlalchemy.org/" target="_blank">
+    <img src="https://img.shields.io/badge/SQLAlchemy-ORM-D71F00?style=flat&logo=sqlalchemy&logoColor=white" />
+  </a>
+
+  <!-- GitHub Actions -->
+  <a href="https://github.com/TheMrityunjayPathak/Dashly/actions/workflows/etl_pipeline.yaml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/TheMrityunjayPathak/Dashly/etl_pipeline.yaml?style=flat&label=ETL%20Pipeline&logo=githubactions&logoColor=white" />
+  </a>
+</p>
+
 <a href="https://app.powerbi.com/view?r=eyJrIjoiZTgxODBhYmMtYjc1Zi00YjVkLWIyZDItZDYxY2RjZmIwNGY5IiwidCI6ImZhYjAyYzVkLTYxYjYtNGIxMi05ZTY2LTdhMDhkOWY0ZmNjMSJ9&pageName=5b9aaf645951a59cacdc">
-<img title="Dashly" src="https://github.com/user-attachments/assets/be84d954-9d52-4692-8a77-d40853a91d61">
+  <img title="Dashly" src="https://github.com/user-attachments/assets/be84d954-9d52-4692-8a77-d40853a91d61">
 </a>
 
 ## Table of Contents
@@ -12,6 +44,7 @@
 - [Database Schema](#database-schema)
 - [SQL Views](#sql-views)
 - [ETL Pipeline](#etl-pipeline)
+- [Workflow](#workflow)
 - [GitHub Actions](#github-actions)
 - [Power BI Dashboard](#power-bi-dashboard)
 - [Results & Insights](#results--insights)
@@ -22,21 +55,21 @@
 <hr>
 
 ## Problem Statement
-**Quick Buy** is a leading superstore operating across the United States, sells thousands of products across regions.
+**Quick Buy** is a leading superstore operating across the United States, selling thousands of products across regions.
 
 Currently, the store relies heavily on multiple spreadsheets and manual SQL queries to track business performance.
 - This manual process makes it :
   - Hard to keep data structured and consistent.
   - Time-consuming to prepare reports.
-  - Difficult to update daily transaction data manually.
+  - Difficult to manually update daily transaction data.
   - Challenging for non-technical users to extract and understand key business insights.
     
 - To solve these challenges, **Quick Buy** aims to build an automated system that :
-    - Collects and stores all data in a structured database.
-    - Cleans and updates data automatically using an ETL Pipeline.
-    - Uses SQL to analyze data and extract meaningful business insights.
-    - Displays insights through an interactive Power BI Dashboard.
-    - Helps managers and executives quickly understand business performance and make better decisions.
+  - Collects and stores all data in a structured database.
+  - Cleans and updates data automatically using an ETL pipeline.
+  - Uses SQL to analyze data and extract meaningful business insights.
+  - Displays insights through an interactive Power BI dashboard.
+  - Helps managers and executives quickly understand business performance and make better decisions.
 
 <hr>
 
@@ -45,48 +78,48 @@ Build an automated system for **Quick Buy** that provides accurate and up-to-dat
 
 To achieve this, the project focuses on the following objectives :
 - **Centralized Data Storage**
-    - Store all business data (orders, customers and products) in a single SQL database.
-    - Ensure data is well-structured, accurate and easy to access.
+  - Store all business data (orders, customers, and products) in a single SQL database.
+  - Ensure data is well-structured, accurate, and easy to access.
 - **Automated ETL Pipeline**
-    - Build an ETL (Extract, Transform, Load) pipeline using Python and SQLAlchemy.
-    - Automatically load new data into the database on a daily schedule.
-    - Reduce manual reporting work and save time for the analytics.
+  - Build an ETL (Extract, Transform, Load) pipeline using Python and SQLAlchemy.
+  - Automatically load new data into the database on a daily schedule.
+  - Reduce manual reporting work and save time for analytics.
 - **Data Cleaning and Transformation**
-    - Automatically clean raw data by fixing missing, duplicate or inconsistent values.
-    - Ensure that data is clean and ready for the analysis.
+  - Automatically clean raw data by fixing missing, duplicate, or inconsistent values.
+  - Ensure data is clean and ready for analysis.
 - **Secure and Stable Database Connection**
-    - Use a secure connection between Python and the database.
-    - Store credentials safely using configuration files or environment variables.
-    - Keep the system stable with low chances of connection failure.
+  - Use a secure connection between Python and the database.
+  - Store credentials safely using configuration files or environment variables.
+  - Keep the system stable with a low chance of connection failure.
 - **SQL Views for Business Insights**
-    - Create SQL views to simplify complex queries and calculations.
-    - Use these views as a consistent data source for the dashboard.
+  - Create SQL views to simplify complex queries and calculations.
+  - Use these views as a consistent data source for the dashboard.
 - **Interactive Power BI Dashboard**
-    - Build dashboard to visualize different aspects of the business like orders, customers, etc.
-    - Make dashboard simple, clear and useful for both technical and non-technical users.
+  - Build a dashboard to visualize different aspects of the business such as orders, customers, etc.
+  - Make the dashboard simple, clear, and useful for both technical and non-technical users.
 - **Daily Report Refresh & Monitoring**
-    - Schedule automatic daily dashboard refreshes to display the most up-to-date data.
-    - Add basic logging to monitor ETL runs and quickly identify failures.
+  - Schedule automatic daily dashboard refreshes to display the most up-to-date data.
+  - Add basic logging to monitor ETL runs and quickly identify failures.
 
 <hr>
 
 ## Setup
 
 ### 1. Clone the Repository
-First, you need to clone the project from GitHub to your local system.
+First, clone the project from GitHub to your local system.
 ```bash
-git clone https://github.com/TheMrityunjayPathak/Dashly.git
-```
+git clone https://github.com/themrityunjaypathak/Dashly.git
+````
 
-### 2. Setup a Virtual Environment
+### 2. Set Up a Virtual Environment
 To avoid version conflicts and keep your project isolated, create a virtual environment.
 
-On Windows :
+On Windows:
 ```bash
 python -m venv .venv
 ```
 
-On macOS/Linux :
+On macOS/Linux:
 ```bash
 python3 -m venv .venv
 ```
@@ -94,12 +127,12 @@ python3 -m venv .venv
 ### 3. Activate the Virtual Environment
 After setting up the virtual environment, activate it to begin installing dependencies.
 
-On Windows :
+On Windows:
 ```bash
 .\.venv\Scripts\activate
 ```
 
-On macOS/Linux :
+On macOS/Linux:
 ```bash
 source .venv/bin/activate
 ```
@@ -122,8 +155,8 @@ pip install --upgrade pip
 ### 5. Setup Environment Variables
 This project uses a `.env` file to store database credentials like `DB_USER`, `DB_PASS`, `DB_NAME`, etc.
 
-It stores environment variables in plain text.
-```python
+Environment variables are stored in plain text.
+```ini
 # .env
 DB_HOST=host_name
 DB_NAME=database_name
@@ -133,19 +166,20 @@ DB_PASS=password
 
 > [!IMPORTANT]
 > Make sure not to commit your `.env` file to GitHub or any public repositories.
-> 
+>
 > You can add it to `.gitignore` to ensure it's excluded from version control.
 
 > [!NOTE]
 > If you want to create a free Database in Neon and connect it with Python, go to [How To](#how-to) section.
 
 ### 6. Database Connectivity Check
-To confirm that the PostgreSQL connection works before running ETL scripts.
+Confirm that the PostgreSQL connection works before running ETL scripts.
 
 This avoids script crashes due to invalid credentials or blocked ports.
 
 ```python
 # Importing Libraries
+import os
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 
@@ -158,15 +192,15 @@ DB_NAME = os.getenv("DB_NAME")
 DB_USER = os.getenv("DB_USER")
 DB_PASS = os.getenv("DB_PASS")
 
-# Creating SQLAlchemy Engine to upload the Data to Neon PostgreSQL Database
+# Creating SQLAlchemy Engine
 engine = create_engine(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}?sslmode=require&channel_binding=require", pool_pre_ping=True)
 ```
 
 ### 7. Run ETL Script
-This initializes the database and :
+This initializes the database and:
 - Cleans raw CSV data
 - Creates tables (`customers`, `orders`, `products`)
-- Loads data into Neon PostgreSQL Database.
+- Loads data into the Neon PostgreSQL Database
 ```bash
 python scripts/etl.py
 ```
@@ -175,9 +209,9 @@ python scripts/etl.py
 > Run this only once initially or when you want a full database refresh.
 
 ### 8. Create SQL Views
-This script builds reusable SQL views that summarize business metrics for Power BI Dashboard.
+This script builds reusable SQL views that summarize business metrics for the Power BI dashboard.
 
-It simplifies queries, ensures consistent logic and improves performance.
+It simplifies queries, ensures consistent logic, and improves performance.
 ```bash
 python scripts/create_views.py
 ```
@@ -191,15 +225,15 @@ python scripts/generate_data.py
 ```
 
 ### 10. Export Views as CSVs (Optional)
-Exports SQL views results to CSV files inside the `views/` folder.
+Exports SQL view results to CSV files inside the `views/` folder.
 
-It is useful for sharing datasets or validating dashboard data without connecting to the database.
+This is useful for sharing datasets or validating dashboard data without connecting to the database.
 ```bash
 python scripts/export_views.py
 ```
 
 ### 11. Simulate Full Workflow Locally
-Running all scripts manually helps confirm that everything works locally before enabling the scheduled GitHub run.
+Running all scripts manually helps confirm everything works locally before enabling the scheduled GitHub run.
 ```bash
 python scripts/etl.py
 python scripts/create_views.py
@@ -208,16 +242,16 @@ python scripts/export_views.py
 ```
 
 ### 12. Check Logs
-- Check log files inside `logs/` folder :
-  - `etl.log` → Initial data loading.
-  - `create_views.log` → SQL views creation.
-  - `generate_data.log` → Daily data generation.
+- Check log files inside the `logs/` folder:
+  - `etl.log` → Initial data loading
+  - `create_views.log` → SQL views creation
+  - `generate_data.log` → Daily data generation
 - Logs help you monitor pipeline performance and troubleshoot errors quickly.
 
 <hr>
 
 ## ER Diagram
-The ER (Entity-Relationship) Diagram visually represents how different tables in the database are related.
+The ER (Entity-Relationship) diagram visually represents how different tables in the database are related.
 
 ### Relationships
 - **One Customer → Many Orders**
@@ -232,9 +266,9 @@ The ER (Entity-Relationship) Diagram visually represents how different tables in
 <hr>
 
 ## Database Schema
-The database is designed to store and organize **Quick Buy's** orders, customers and products data.
+The database is designed to store and organize **Quick Buy's** orders, customers, and product data.
 
-It ensures that all business data is centralized, consistent and easy to query for analysis and dashboarding.
+It ensures that all business data is centralized, consistent, and easy to query for analysis and dashboarding.
 
 ### SQL Schema Definition 
 ```sql
@@ -284,7 +318,7 @@ CREATE TABLE IF NOT EXISTS orders (
 <hr>
 
 ## SQL Views
-SQL Views are used to make data analysis easier and keep all business metrics consistent for dashboards.
+SQL views are used to make data analysis easier and keep business metrics consistent for dashboards.
 
 Instead of running complex queries every time, Power BI connects directly to these views to fetch clean data.
 
@@ -507,23 +541,23 @@ Instead of running complex queries every time, Power BI connects directly to the
 <hr>
 
 ## ETL Pipeline
-- The ETL (Extract, Transform, Load) Pipeline is the core part of this project.
-- It automatically cleans and loads validated sales data into a PostgreSQL database for Power BI dashboard.
-- It is built with Python using SQLAlchemy and is reliable and securely configured via environment variables.
+- The ETL (Extract, Transform, Load) pipeline is the core part of this project.
+- It automatically cleans and loads validated sales data into a PostgreSQL database for the Power BI dashboard.
+- It is built with Python using SQLAlchemy and is securely configured via environment variables.
 
 ### ETL Pipeline Structure
-| **Script Name**    | **Purpose**                                                                                    |
-| :----------------- | :--------------------------------------------------------------------------------------------- |
-| `etl.py`           | Sets up the database schema, cleans the dataset and loads initial data into the database.      |
-| `create_views.py`  | Creates multiple SQL views that summarizes and aggregates data for Power BI Dashboard.         |
-| `generate_data.py` | Generates random synthetic transactions data to simulate daily updates in the database.        |
+| **Script Name**    | **Purpose**                                                                                  |
+| :----------------- | :------------------------------------------------------------------------------------------- |
+| `etl.py`           | Sets up the database schema, cleans the dataset, and loads initial data into the database.   |
+| `create_views.py`  | Creates multiple SQL views that summarize and aggregate data for Power BI dashboard.     |
+| `generate_data.py` | Generates random synthetic transaction data to simulate daily updates in the database.       |
 
-### How the ETL Pipeline works?
+### How does the ETL pipeline work?
 #### 1. `etl.py`
-- This script handles the first step of the process, getting your database ready.
+- This script handles the first step of the process by preparing the database.
 
 <details>
-<summary>Click Here to view the entire Script</summary>
+<summary>Click here to view the entire script</summary>
 <br>
   
 ```python
@@ -675,7 +709,7 @@ else:
 
 </details>
 
-#### What is does?
+#### What does it do?
 - **Load Configuration**
   - Reads environment variables (like `DB_HOST`, `DB_NAME`) from a `.env` file for secure database access.
 - **Logging Setup**
@@ -683,16 +717,16 @@ else:
 - **Extract Data**
   - Loads raw data from a CSV file using a custom `load_csv()` utility function.
 - **Transform Data**
-  - Removes duplicates, standardizes column names and optimizes datatypes.
+  - Removes duplicates, standardizes column names, and optimizes data types.
 - **Load Data**
-  - Creates tables in Neon PostgreSQL Database and loads the cleaned data using `to_sql()` function.
+  - Creates tables in the Neon PostgreSQL database and loads the cleaned data using the `to_sql()` function.
 - **Schema Management**
   - Ensures relationships between tables using foreign keys and maintains data integrity.
-  
+
 ---
 
 #### 2. `create_views.py`
-- This script builds SQL views in the PostgreSQL Database to simplify analysis and reporting in Power BI.
+- This script builds SQL views in the PostgreSQL database to simplify analysis and reporting in Power BI.
 
 <details>
 <summary>Click Here to view the entire Script</summary>
@@ -941,25 +975,25 @@ logging.info("Views created successfully in Neon PostgreSQL Database")
 ```
 </details>
 
-#### What it does?
+#### What does it do?
 - **Database Connection**
   - Connects to the database securely using environment variables.
 - **Define SQL Views**
   - Creates multiple SQL views to extract key business insights.
 - **Execute & Commit**
-  - Executes each `CREATE OR REPLACE VIEW` statement and commit changes.
+  - Executes each `CREATE OR REPLACE VIEW` statement and commits changes.
 - **Logging**
   - Stores execution logs in `logs/create_views.log`.
 
 ---
 
 #### 3. `generate_data.py`
-- This script keeps the database updated with new transaction data for schedule data refresh in Power BI.
+- This script keeps the database updated with new transaction data for scheduled data refresh in Power BI.
 
 <details>
 <summary>Click Here to view the entire Script</summary>
 <br>
-  
+
 ```python
 # ---------------- Loading Python Packages ---------------- 
 
@@ -1041,11 +1075,11 @@ logging.info("New data uploaded to database successfully")
 ```
 </details>
 
-#### What it does?
+#### What does it do?
 - **Generate Random Data**
-  - Uses custom utility functions to create synthetic customers and orders data.
+  - Uses custom utility functions to create synthetic customer and order data.
 - **Data Cleaning**
-  - Removes duplicates and optimizes datatypes before uploading to Neon Database.
+  - Removes duplicates and optimizes data types before uploading to the Neon database.
 - **Append Unique Data**
   - Inserts only new records into the database, avoiding duplicates.
 - **Logging**
@@ -1063,22 +1097,80 @@ This ensures that the Power BI Dashboard always display the latest insights auto
 
 <hr>
 
+## Workflow
+
+```mermaid
+flowchart TB
+
+  subgraph S1["1) Data Source"]
+    direction TB
+    A["Superstore CSV<br/>(sales_data.csv)"]
+  end
+
+  subgraph S2["2) ETL Pipeline<br/>(Python + SQLAlchemy)"]
+    direction TB
+    B["Extract<br/>Load raw CSV data"]
+    C["Transform<br/>Clean + optimize"]
+    D["Load<br/>Insert into Neon PostgreSQL"]
+  end
+
+  subgraph S3["3) Database Layer<br/>(Neon PostgreSQL)"]
+    direction TB
+    E["Tables<br/>customers, orders, products"]
+    F["SQL Views<br/>Business metric views"]
+  end
+
+  subgraph S4["4) Automation<br/>(GitHub Actions)"]
+    direction TB
+    G["Scheduled trigger<br/>cron: daily 10:00 AM"]
+    H["Run pipeline<br/>etl.py → generate_data.py"]
+    I["Refresh views<br/>create_views.py"]
+    J["Export views<br/>CSV exports + artifacts"]
+    K["Logs & monitoring<br/>Upload log artifacts"]
+  end
+
+  subgraph S5["5) Reporting<br/>(Power BI)"]
+    direction TB
+    L["Power BI connects to views<br/>(DirectQuery / Import)"]
+    M["Dashboard pages<br/>Home, Overview, Customers, Products"]
+    N["Insights<br/>Sales, Profit, Region, Trends"]
+  end
+
+  %% Main data flow
+  A --> B --> C --> D --> E --> F --> L --> M --> N
+
+  %% Automation flow
+  G --> H --> I --> J --> K
+  H --> D
+  I --> F
+  F --> L
+
+  %% Minimal GitHub-safe dark styling
+  classDef block fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#ffffff;
+  classDef step  fill:#161b22,stroke:#8b949e,stroke-width:1px,color:#ffffff;
+
+  class S1,S2,S3,S4,S5 block;
+  class A,B,C,D,E,F,G,H,I,J,K,L,M,N step;
+```
+
+<hr>
+
 ## Results & Insights
-It highlights the key outcomes and insights generated from the project's ETL pipeline and Power BI dashboards.
+This section highlights the key outcomes and insights generated from the ETL pipeline and Power BI dashboards.
 
 ### Pipeline Performance
-It includes pipeline performance metrics like runtime, automation frequency and reliability.
+It includes pipeline performance metrics such as runtime, automation frequency, and reliability.
 
 #### 1. Data Loading Overview
-| **Parameter**                  | **Value**                         |
-| :----------------------------- | :-------------------------------- |
-| **Dataset Size**               | ~50,000 rows                      |
-| **Tables Used**                | `customers`, `orders`, `products` |
-| **Avg. Daily Inserts**         | ~100 records                      |
-| **Database**                   | Neon PostgreSQL (Cloud-hosted)    |
+| **Parameter**          | **Value**                         |
+| :--------------------- | :-------------------------------- |
+| **Dataset Size**       | ~50,000 rows                      |
+| **Tables Used**        | `customers`, `orders`, `products` |
+| **Avg. Daily Inserts** | ~100 records                      |
+| **Database**           | Neon PostgreSQL (cloud-hosted)    |
 
 > [!NOTE]
-> This setup mimics real-time superstore sales with daily updates to orders and customers tables.
+> This setup mimics real-time superstore sales with daily updates to the `orders` and `customers` tables.
 
 #### 2. Automation & Scheduling
 | **Attribute**           | **Details**                                         |
@@ -1090,57 +1182,55 @@ It includes pipeline performance metrics like runtime, automation frequency and 
 | **Runner Environment**  | `ubuntu-latest` (Linux VM)                          |
 
 > [!NOTE]
-> This setup ensures that the latest data is always available for Power BI dashboards, no manual refresh required.
+> This setup ensures that the latest data is always available for Power BI dashboards, with no manual effort.
 
 <img title="Automation & Scheduling" src="https://github.com/user-attachments/assets/0708e2eb-6511-4962-bb36-2c77752a8f47">
 
 #### 3. Runtime Performance
-| **Workflow Step**                    | **Description**                                   | **Runtime (sec)** |
-| :----------------------------------- | :------------------------------------------------ | :--------------- |
-| **Set up job**                       | Initializes GitHub Actions Environment            |                1s |
-| **Checkout Repository**              | Pulls repository code into the Runner             |                1s |
-| **Set up Python**                    | Installs Python Environment (v3.13.0)             |                0s |
-| **Install dependencies**             | Installs libraries from `requirements.txt`        |               22s |
-| **Run ETL Script**                   | Extracts, transforms & loads data into PostgreSQL |                3s |
-| **Run Generate Data Script**         | Generates new synthetic customers & orders data   |                4s |
-| **Run Views Script**                 | Creates/refreshes analytical SQL Views            |                3s |
-| **Run Export Views Script**          | Exports SQL views as CSV files                    |                2s |
-| **Upload Exported CSV as Artifacts** | Uploads exported CSVs to GitHub Actions Artifacts |                2s |
-| **Commit and Push CSVs**             | Commits CSV files to the Repository               |                0s |
-| **Upload Logs as Artifacts**         | Uploads log files for debugging and tracking      |                1s |
-| **Post Setup/Cleanup Steps**         | Cleans Environment Post-run                       |              0-2s |
+| **Workflow Step**                    | **Description**                                      | **Runtime (sec)** |
+| :----------------------------------- | :--------------------------------------------------- | :---------------: |
+| **Set up job**                       | Initializes GitHub Actions environment               |        1s         |
+| **Checkout repository**              | Pulls repository code into the runner                |        1s         |
+| **Set up Python**                    | Installs Python environment (v3.13.0)                |        0s         |
+| **Install dependencies**             | Installs libraries from `requirements.txt`           |        22s        |
+| **Run ETL Script**                   | Extracts, transforms, and loads data into PostgreSQL |        3s         |
+| **Run Generate Data Script**         | Generates new synthetic customer and order data      |        4s         |
+| **Run Views Script**                 | Creates/refreshes analytical SQL views               |        3s         |
+| **Run Export Views Script**          | Exports SQL views as CSV files                       |        2s         |
+| **Upload Exported CSV as Artifacts** | Uploads exported CSVs to GitHub Actions artifacts    |        2s         |
+| **Commit and Push CSVs**             | Commits CSV files to the repository                  |        0s         |
+| **Upload Logs as Artifacts**         | Uploads log files for debugging and tracking         |        1s         |
+| **Post Setup/Cleanup Steps**         | Cleans the environment post-run                      |      0–2s         |
 
 > [!NOTE]
-> Total Runtime : ~45 to ~50 seconds per pipeline run
+> **Total runtime :** ~40–50 seconds per pipeline run
 > 
-> Scheduling : The workflow is scheduled via cron (30 4 * * *), meaning it runs daily at 10:00 AM.
+> **Scheduling :** The workflow is scheduled via `cron` (`30 4 * * *`), meaning it runs daily at **10:00 AM**.
 > 
-> The ETL pipeline runs within a minute, automatically refreshing the dashboard data daily without manual effort.
+> The ETL pipeline runs within a minute, automatically refreshing dashboard data daily with no manual effort.
 
 <img title="Runtime Performance" src="https://github.com/user-attachments/assets/8dcf62d2-9bb8-4ef4-b0c4-292115dc5079">
 
 #### 4. Error Handling and Logging
-| **Aspect**           | **Implementation Details**                                            |
-| :------------------- | :-------------------------------------------------------------------- |
-| **Error Tracking**   | `try-except` blocks in each Script                                    |
-| **Log Files**        | `etl.log`, `generate_data.log`, `create_views.log`                    |
-| **Log Storage**      | Uploaded as GitHub Actions Artifacts                                  |
-| **Security**         | All credentials stored in GitHub Secrets (`DB_USER`, `DB_PASS`, etc.) |
+| **Aspect**         | **Implementation Details**                                            |
+| :----------------- | :-------------------------------------------------------------------- |
+| **Error Tracking** | `try-except` blocks in each script                                    |
+| **Log Files**      | `etl.log`, `generate_data.log`, `create_views.log`                    |
+| **Log Storage**    | Uploaded as GitHub Actions artifacts                                  |
+| **Security**       | All credentials stored in GitHub Secrets (`DB_USER`, `DB_PASS`, etc)  |
 
 > [!TIP]
->
-> Automated logging and secret handling remove the need for manual checks and ensure a smooth workflow run.
+> Automated logging and secret handling remove the need for manual checks and ensure smooth workflow runs.
 
 #### 5. Reliability and Stability
-| **Metric**                  | **Value**              | **Remarks**                                |
-| :-------------------------- | :--------------------- | :----------------------------------------- |
-| **Total Runtime**           | ~40 seconds            | Fast for Daily Automated ETL               |
-| **Success Rate**            | 100% (last 8 runs)     | Verified via GitHub Actions Workflow Panel |
-| **Avg. Records Inserted**   | ~100 rows/day          | Lightweight Daily Updates                  |
-| **Resource Utilization**    | Low CPU/Memory         | Efficient for Cloud Runners                |
+| **Metric**                | **Value**          | **Remarks**                                |
+| :------------------------ | :----------------- | :----------------------------------------- |
+| **Total Runtime**         | ~40 seconds        | Fast for daily automated ETL               |
+| **Success Rate**          | 100% (last 8 runs) | Verified via GitHub Actions workflow panel |
+| **Avg. Records Inserted** | ~100 rows/day      | Lightweight daily updates                  |
+| **Resource Utilization**  | Low CPU/Memory     | Efficient for cloud runners                |
 
 > [!IMPORTANT]
->
 > The pipeline runs fully unattended, providing consistent daily data updates and automatic Power BI refreshes.
 
 <img title="Reliability and Stability" src="https://github.com/user-attachments/assets/20dbee9f-b68e-4a1a-b512-4ed7f443d587">
@@ -1283,38 +1373,38 @@ It includes pipeline performance metrics like runtime, automation frequency and 
 
 ## How To
 
-### 1. How to create a free PostgreSQL Database on Neon?
-- Open [Neon](https://neon.com/) in your browser
+### 1. How to create a free PostgreSQL database on Neon?
+- Open [Neon](https://neon.com/) in your browser.
 <img title="Neon" src="https://github.com/user-attachments/assets/4a5b08e6-290b-4fb7-9820-3afd0b599e03">
 &nbsp;
 
-- Login with GitHub/Google/Microsoft
+- Log in using GitHub/Google/Microsoft.
 <img title="Login" src="https://github.com/user-attachments/assets/657ccfaa-3c26-492a-9a5f-537f773c763e">
 &nbsp;
 
-- Create a New Project
+- Create a New Project.
 <img title="New Project" src="https://github.com/user-attachments/assets/dd9271db-e210-4ed0-aeaf-9ce337d06474">
 &nbsp;
 
-- Fill in the Project Details
+- Fill in the Project Details.
 <img title="Project Details" src="https://github.com/user-attachments/assets/fb2cf22c-6af9-4598-b207-351e4cd66f45">
 &nbsp;
 
-- New PostgreSQL Project is created in Neon Console
+- New PostgreSQL project is created in the Neon Console.
 <img title="Neon Console" src="https://github.com/user-attachments/assets/eb7f3663-9cda-49ae-94ff-0c866a1d9898">
 
 <hr>
 
 ### 2. How to connect Neon Database with Python via SQLAlchemy?
-- Open the newly created Project and Click Connect
+- Open the newly created Project and Click Connect.
 <img title="Project Console" src="https://github.com/user-attachments/assets/17a7a0bb-ce46-4496-9f35-b6cce062c791">
 &nbsp;
 
-- Get the Connection String of your Database
+- Get the Connection String of your Database.
 <img title="Connection String" src="https://github.com/user-attachments/assets/bd0d5636-38e3-4b3f-abd8-0bc0589f3577">
 <p align="center">Image taken from Neon Documentation</p>
 
-- Understand the Connection String
+- Understand the Connection String.
 ```
 postgresql://alex:AbC123dEf@ep-cool-darkness-a1b2c3d4-pooler.us-east-2.aws.neon.tech/dbname?sslmode=require&channel_binding=require
              ^    ^         ^                         ^                              ^
@@ -1325,7 +1415,7 @@ postgresql://alex:AbC123dEf@ep-cool-darkness-a1b2c3d4-pooler.us-east-2.aws.neon.
 You can use this to configure your database connection.
 
 You can place the connection details in an `.env` file for secure access.
-```bash
+```ini
 # .env file
 DB_HOST=ep-cool-darkness-a1b2c3d4-pooler.us-east-2.aws.neon.tech
 DB_NAME=dbname
@@ -1697,21 +1787,21 @@ jobs:
 <hr>
 
 ## Power BI Dashboard
-- The Power BI Dashboard is designed to turn data into insights with a clean and interactive interface.
-- It connects directly to the database, ensuring that the dashboard always reflects the most recent data.
-- The dashboard consists of four main pages : Home, Overview, Customers and Products.
-- All are connected through page navigation and drill-through features.
+- The Power BI dashboard is designed to turn data into insights with a clean and interactive interface.
+- It connects directly to the database, ensuring the dashboard always reflects the most recent data.
+- The dashboard consists of four main pages: **Home**, **Overview**, **Customers**, and **Products**.
+- All pages are connected through page navigation and drill-through features.
 
 ### 1. Home Page
-- This page serves as a entry point and navigation hub for the dashboard.
+- This page serves as an entry point and navigation hub for the dashboard.
   
 ### Key Components
 - **Navigation Buttons**
-    - Interactive page navigator that links to Overview, Customers and Products page.
+  - Interactive page navigator that links to the **Overview**, **Customers**, and **Products** pages.
 - **Dashboard Branding**
-    - Displays a themed background image for a mordern look.
+  - Displays a themed background image for a modern look.
 - **User Experience**
-    - Designed for clarity and smooth navigation so users can access key insights in one click.
+  - Designed for clarity and smooth navigation so users can access key insights in one click.
 
 <img title="Home" src="https://github.com/user-attachments/assets/a15b8d82-a886-492f-af40-3d8d25ea22ad">
 
@@ -1722,84 +1812,84 @@ jobs:
   
 ### Key Components
 - **Multi-Row Cards - Key Business Metrics**
-  - Data View : `overall_sales_performance`
-  - Purpose : Gives an instant snapshot of business performance at a glance.
+  - Data View: `overall_sales_performance`
+  - Purpose: Gives an instant snapshot of business performance at a glance.
 - **Filled Map - Sales by State**
-  - Data View : `state_wise_sales_and_customer_base`
-  - Purpose : Visualizes geographic sales distribution, showing which states drive the most revenue.
+  - Data View: `state_wise_sales_and_customer_base`
+  - Purpose: Visualizes geographic sales distribution, showing which states drive the most revenue.
 - **Donut Chart - Shipping Performance**
-  - Data View : `shipping_performance`
-  - Purpose : Compares sales and profit by shipping mode, helping identify cost-effective delivery methods.
+  - Data View: `shipping_performance`
+  - Purpose: Compares sales and profit by shipping mode, helping identify cost-effective delivery methods.
 - **Stacked Bar Chart - Segment-wise Sales & Profit**
-  - Data View : `segment_wise_sales_and_profit`
-  - Purpose : Shows sales and profit across customer segments.
+  - Data View: `segment_wise_sales_and_profit`
+  - Purpose: Shows sales and profit across customer segments.
 - **Bar Chart - Top Customers by Sales**
-  - Data View : `top_customers_by_sales`
-  - Purpose : Highlights the top-performing customers, helping identify key contributors to revenue.
+  - Data View: `top_customers_by_sales`
+  - Purpose: Highlights top-performing customers, helping identify key contributors to revenue.
 - **Filled Area Chart - Monthly Sales & Profit Trend**
-  - Data View : `month_wise_sales_and_profit`
-  - Purpose : Displays the month-wise trend of sales and profit to track seasonal performance and growth.
+  - Data View: `month_wise_sales_and_profit`
+  - Purpose: Displays month-wise trends of sales and profit to track seasonal performance and growth.
 
 <img title="Overview" src="https://github.com/user-attachments/assets/5584efcc-c10a-40c0-b18c-18e907ea64df">
 
 <hr>
 
 ### 3. Customers
-- This page focuses on understanding customer behavior, performance and geographic distribution.
+- This page focuses on understanding customer behavior, performance, and geographic distribution.
 
 ### Key Components
 - **Multi-Row Card - Customer Performance Summary**
-  - Data View : `overall_customers_performance`
-  - Purpose : Provides an overview of how much each customer contributes on average to sales and profits.
+  - Data View: `overall_customers_performance`
+  - Purpose: Provides an overview of how much each customer contributes on average to sales and profit.
 - **Filled Map - State-wise Customer Base**
-  - Data View : `state_wise_sales_and_customer_base`
-  - Purpose : Visualizes customer distribution across states, helping identify regions with the highest customers.
+  - Data View: `state_wise_sales_and_customer_base`
+  - Purpose: Visualizes customer distribution across states, helping identify regions with largest customer base.
 - **Stacked Column Chart - Region-wise Monthly Sales**
-  - Data View : `region_wise_monthly_sales`
-  - Purpose : Tracks how sales vary across different regions and months, helping spot seasonal/regional trends.
+  - Data View: `region_wise_monthly_sales`
+  - Purpose: Tracks how sales vary across regions and months, helping spot seasonal and regional trends.
 - **Stacked Column Chart - Region-wise Sales & Profit**
-  - Data View : `region_wise_sales_and_profit`
-  - Purpose : Compares overall sales and profit across regions to identify high and low-performing areas.
+  - Data View: `region_wise_sales_and_profit`
+  - Purpose: Compares overall sales and profit across regions to identify high- and low-performing areas.
 - **Dual Area Charts - Segment-wise Monthly Sales & Profit**
-  - Data View : `segment_wise_monthly_sales_and_profit`
-  - Purpose : Visualizes monthly trends for sales and profit across different customer segments.
+  - Data View: `segment_wise_monthly_sales_and_profit`
+  - Purpose: Visualizes monthly trends of sales and profit across customer segments.
 
 <img title="Customers" src="https://github.com/user-attachments/assets/fd6944a8-59af-43e3-a78d-18b1f92386a4">
 
 <hr>
 
 ### 4. Products
-- This page focuses on analyzing product performance, category trends and geographical purchasing behavior.
+- This page focuses on analyzing product performance, category trends, and geographic purchasing behavior.
   
 ### Key Components
 - **Filled Map - State-wise Most Purchased Sub-category**
-  - Data View : `state_wise_most_purchased_sub_category`
-  - Purpose : Helps identify regional preferences and popular product types across states.
+  - Data View: `state_wise_most_purchased_sub_category`
+  - Purpose: Identifies regional preferences and popular product types across states.
 - **Treemap - Category-wise Orders**
-  - Data View : `category_wise_sales_profit_and_orders`
-  - Purpose : Visualizes which categories dominate in orders and their contribution to total business.
+  - Data View: `category_wise_sales_profit_and_orders`
+  - Purpose: Visualizes which categories dominate in orders and their contribution to the business.
 - **Stacked Column Chart - Category-wise Sales and Profit**
-  - Data View : `category_wise_sales_profit_and_orders`
-  - Purpose : Visualizes which categories dominate in sales and profit and their contribution to total business.
+  - Data View: `category_wise_sales_profit_and_orders`
+  - Purpose: Shows which categories dominate in sales and profit and their contribution to the business.
 - **Stacked Bar Chart - Sub-category-wise Sales & Profit**
-  - Data View : `sub_category_wise_sales_and_profit`
-  - Purpose : Compares performance of business across all product sub-categories.
+  - Data View: `sub_category_wise_sales_and_profit`
+  - Purpose: Compares business performance across all product sub-categories.
 - **Dual Ribbon Charts - Category-wise Monthly Sales & Profit Trends**
-  - Data View : `category_wise_monthly_sales_and_profit`
-  - Purpose : Tracks how each product category performs across months, identify growth patterns.
+  - Data View: `category_wise_monthly_sales_and_profit`
+  - Purpose: Tracks how each product category performs across months to identify growth patterns.
 - **Gauge Chart - Profit Margin Tracker**
-  - Data Source
+  - Data Source:
     - Calculated using total sales and profit.
-  - Configuration 
-    - Minimum : 0%
-    - Maximum : 40%
-    - Target : 30%
-  - Purpose
+  - Configuration:
+    - Minimum: 0%
+    - Maximum: 40%
+    - Target: 30%
+  - Purpose:
     - Tracks the current profit margin against the target (30%).
-  - Color Logic
-    - Red (0-10%) → Low profit margin, needs improvement.
-    - Yellow (10-20%) → Moderate margin, progressing toward target.
-    - Green (20-40%) → Healthy profit margin, close to or exceeding target.
+  - Color Logic:
+    - Red (0–10%) → Low profit margin, needs improvement.
+    - Yellow (10–20%) → Moderate margin, progressing toward target.
+    - Green (20–40%) → Healthy profit margin, close to or exceeding target.
 
 <img title="Products" src="https://github.com/user-attachments/assets/ccf6f4ad-4498-4d0b-9284-0c60feeb19c2">
 
@@ -1808,6 +1898,8 @@ jobs:
 ## Folder Structure
 
 ```
+Dashly/
+|
 ├── .github/
 │   └── workflows/
 │       └── etl_pipeline.yml         # GitHub Actions Workflow File
@@ -1850,7 +1942,6 @@ jobs:
 <hr>
 
 ## License
-
 This project is licensed under the [MIT License](LICENSE). You are free to use and modify the code as needed.
 
 <div align='left'>
