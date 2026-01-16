@@ -6,14 +6,9 @@
     <img src="https://img.shields.io/badge/Live%20Demo-Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black" />
   </a>
 
-  <!-- License -->
-  <a href="./LICENSE" target="_blank">
-    <img src="https://img.shields.io/badge/License-MIT-2ea44f?style=flat&logo=open-source-initiative&logoColor=white" />
-  </a>
-
   <!-- Python -->
   <a href="https://www.python.org/" target="_blank">
-    <img src="https://img.shields.io/badge/Python-v3.11-3776AB?style=flat&logo=python&logoColor=white" />
+    <img src="https://img.shields.io/badge/Python-v3.13-3776AB?style=flat&logo=python&logoColor=white" />
   </a>
 
   <!-- PostgreSQL -->
@@ -23,12 +18,17 @@
 
   <!-- SQLAlchemy -->
   <a href="https://www.sqlalchemy.org/" target="_blank">
-    <img src="https://img.shields.io/badge/SQLAlchemy-ORM-D71F00?style=flat&logo=sqlalchemy&logoColor=white" />
+    <img src="https://img.shields.io/badge/SQLAlchemy-v2.0-D71F00?style=flat&logo=sqlalchemy&logoColor=white" />
+  </a>
+
+  <!-- Git -->
+  <a href="https://git-scm.com/" target="_blank">
+    <img src="https://img.shields.io/badge/Git-v2.47-F05032?style=flat&logo=git&logoColor=white" />
   </a>
 
   <!-- GitHub Actions -->
-  <a href="https://github.com/TheMrityunjayPathak/Dashly/actions/workflows/etl_pipeline.yaml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/TheMrityunjayPathak/Dashly/etl_pipeline.yaml?style=flat&label=ETL%20Pipeline&logo=githubactions&logoColor=white" />
+  <a href="https://github.com/themrityunjaypathak/Dashly/actions/workflows/etl_pipeline.yaml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/TheMrityunjayPathak/Dashly/etl_pipeline.yaml?style=flat&label=GitHub%20Actions&logo=githubactions&logoColor=white" />
   </a>
 </p>
 
@@ -48,6 +48,7 @@
 - [GitHub Actions](#github-actions)
 - [Power BI Dashboard](#power-bi-dashboard)
 - [Results & Insights](#results--insights)
+- [Impact](#impact)
 - [How To](#how-to)
 - [Folder Structure](#folder-structure)
 - [License](#license)
@@ -55,7 +56,7 @@
 <hr>
 
 ## Problem Statement
-**Quick Buy** is a leading superstore operating across the United States, selling thousands of products across regions.
+Quick Buy is a leading superstore operating across the United States, selling thousands of products across regions.
 
 Currently, the store relies heavily on multiple spreadsheets and manual SQL queries to track business performance.
 - This manual process makes it :
@@ -64,7 +65,7 @@ Currently, the store relies heavily on multiple spreadsheets and manual SQL quer
   - Difficult to manually update daily transaction data.
   - Challenging for non-technical users to extract and understand key business insights.
     
-- To solve these challenges, **Quick Buy** aims to build an automated system that :
+- To solve these challenges, Quick Buy aims to build an automated system that :
   - Collects and stores all data in a structured database.
   - Cleans and updates data automatically using an ETL pipeline.
   - Uses SQL to analyze data and extract meaningful business insights.
@@ -74,7 +75,7 @@ Currently, the store relies heavily on multiple spreadsheets and manual SQL quer
 <hr>
 
 ## Project Objective
-Build an automated system for **Quick Buy** that provides accurate and up-to-date business insights.
+Build an automated system for Quick Buy that provides accurate and up-to-date business insights.
 
 To achieve this, the project focuses on the following objectives :
 - **Centralized Data Storage**
@@ -114,12 +115,12 @@ git clone https://github.com/themrityunjaypathak/Dashly.git
 ### 2. Set Up a Virtual Environment
 To avoid version conflicts and keep your project isolated, create a virtual environment.
 
-On Windows:
+On Windows :
 ```bash
 python -m venv .venv
 ```
 
-On macOS/Linux:
+On macOS/Linux :
 ```bash
 python3 -m venv .venv
 ```
@@ -127,12 +128,12 @@ python3 -m venv .venv
 ### 3. Activate the Virtual Environment
 After setting up the virtual environment, activate it to begin installing dependencies.
 
-On Windows:
+On Windows :
 ```bash
 .\.venv\Scripts\activate
 ```
 
-On macOS/Linux:
+On macOS/Linux :
 ```bash
 source .venv/bin/activate
 ```
@@ -177,6 +178,10 @@ Confirm that the PostgreSQL connection works before running ETL scripts.
 
 This avoids script crashes due to invalid credentials or blocked ports.
 
+<details>
+<summary>Click Here to view Code Snippet</summary>
+<br>
+
 ```python
 # Importing Libraries
 import os
@@ -195,9 +200,10 @@ DB_PASS = os.getenv("DB_PASS")
 # Creating SQLAlchemy Engine
 engine = create_engine(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}?sslmode=require&channel_binding=require", pool_pre_ping=True)
 ```
+</details>
 
 ### 7. Run ETL Script
-This initializes the database and:
+This initializes the database and :
 - Cleans raw CSV data
 - Creates tables (`customers`, `orders`, `products`)
 - Loads data into the Neon PostgreSQL Database
@@ -242,7 +248,7 @@ python scripts/export_views.py
 ```
 
 ### 12. Check Logs
-- Check log files inside the `logs/` folder:
+- Check log files inside the `logs/` folder :
   - `etl.log` → Initial data loading
   - `create_views.log` → SQL views creation
   - `generate_data.log` → Daily data generation
@@ -266,11 +272,14 @@ The ER (Entity-Relationship) diagram visually represents how different tables in
 <hr>
 
 ## Database Schema
-The database is designed to store and organize **Quick Buy's** orders, customers, and product data.
+The database is designed to store and organize Quick Buy's orders, customers, and product data.
 
 It ensures that all business data is centralized, consistent, and easy to query for analysis and dashboarding.
 
-### SQL Schema Definition 
+<details>
+<summary>Click Here to view Schema Definition</summary>
+<br>
+
 ```sql
 /* Customers Table */
 CREATE TABLE IF NOT EXISTS customers (
@@ -314,6 +323,7 @@ CREATE TABLE IF NOT EXISTS orders (
   FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 ```
+</details>
 
 <hr>
 
@@ -323,219 +333,218 @@ SQL views are used to make data analysis easier and keep business metrics consis
 Instead of running complex queries every time, Power BI connects directly to these views to fetch clean data.
 
 <details>
-  <summary>Click Here for detailed SQL Views</summary>
-  <br>
+<summary>Click Here to view SQL Views</summary>
+<br>
 
-  ```sql
-  /* segment_wise_sales_and_profit */
-  /* Calculates total sales and profit for each customer segment. */
-  CREATE OR REPLACE VIEW segment_wise_sales_and_profit AS
-  SELECT 
-      c.segment,
-      SUM(o.sales) AS total_sales,
-      SUM(o.profit) AS total_profit
-  FROM orders AS o
-  JOIN customers AS c
-  ON o.customer_id = c.customer_id
-  GROUP BY c.segment;
-  ```
+```sql
+/* segment_wise_sales_and_profit */
+/* Calculates total sales and profit for each customer segment. */
+CREATE OR REPLACE VIEW segment_wise_sales_and_profit AS
+SELECT 
+    c.segment,
+    SUM(o.sales) AS total_sales,
+    SUM(o.profit) AS total_profit
+FROM orders AS o
+JOIN customers AS c
+ON o.customer_id = c.customer_id
+GROUP BY c.segment;
+```
 
-  ```sql
-  /* region_wise_sales_and_profit */
-  /* Summarizes total sales and profit across all regions. */
-  CREATE OR REPLACE VIEW region_wise_sales_and_profit AS
-  SELECT 
-      c.region,
-      SUM(o.sales) AS total_sales,
-      SUM(o.profit) AS total_profit
-  FROM orders AS o
-  JOIN customers AS c
-  ON o.customer_id = c.customer_id
-  GROUP BY c.region;
-  ```
+```sql
+/* region_wise_sales_and_profit */
+/* Summarizes total sales and profit across all regions. */
+CREATE OR REPLACE VIEW region_wise_sales_and_profit AS
+SELECT 
+    c.region,
+    SUM(o.sales) AS total_sales,
+    SUM(o.profit) AS total_profit
+FROM orders AS o
+JOIN customers AS c
+ON o.customer_id = c.customer_id
+GROUP BY c.region;
+```
 
-  ```sql
-  /* month_wise_sales_and_profit */
-  /* Shows monthly trends of total sales and profit. */
-  CREATE OR REPLACE VIEW month_wise_sales_and_profit AS 
-  SELECT
-      TO_CHAR(order_date, 'Mon') AS month, 
-      SUM(sales) AS total_sales,
-      SUM(profit) AS total_profit
-  FROM orders
-  GROUP BY month;
-  ```
+```sql
+/* month_wise_sales_and_profit */
+/* Shows monthly trends of total sales and profit. */
+CREATE OR REPLACE VIEW month_wise_sales_and_profit AS 
+SELECT
+    TO_CHAR(order_date, 'Mon') AS month, 
+    SUM(sales) AS total_sales,
+    SUM(profit) AS total_profit
+FROM orders
+GROUP BY month;
+```
 
-  ```sql
-  /* top_customers_by_sales */
-  /* Lists customers with their total sales and profit to identify top performers. */
-  CREATE OR REPLACE VIEW top_customers_by_sales AS
-  SELECT
-      c.customer_id, 
-      c.customer_name,
-      SUM(o.sales) AS total_sales,
-      SUM(o.profit) AS total_profit
-  FROM orders AS o
-  JOIN customers AS c
-  ON o.customer_id = c.customer_id
-  GROUP BY c.customer_id, c.customer_name;
-  ```
+```sql
+/* top_customers_by_sales */
+/* Lists customers with their total sales and profit to identify top performers. */
+CREATE OR REPLACE VIEW top_customers_by_sales AS
+SELECT
+    c.customer_id, 
+    c.customer_name,
+    SUM(o.sales) AS total_sales,
+    SUM(o.profit) AS total_profit
+FROM orders AS o
+JOIN customers AS c
+ON o.customer_id = c.customer_id
+GROUP BY c.customer_id, c.customer_name;
+```
 
-  ```sql
-  /* shipping_performance */
-  /* Analyzes sales and profit performance by shipping mode. */
-  CREATE OR REPLACE VIEW shipping_performance AS 
-  SELECT 
-      ship_mode,
-      SUM(sales) AS total_sales,
-      SUM(profit) AS total_profit
-  FROM orders
-  GROUP BY ship_mode;
-  ```
+```sql
+/* shipping_performance */
+/* Analyzes sales and profit performance by shipping mode. */
+CREATE OR REPLACE VIEW shipping_performance AS 
+SELECT 
+    ship_mode,
+    SUM(sales) AS total_sales,
+    SUM(profit) AS total_profit
+FROM orders
+GROUP BY ship_mode;
+```
 
-  ```sql
-  /* overall_sales_performance */
-  /* Provides overall business KPIs like total sales, profit, orders and customers. */
-  CREATE OR REPLACE VIEW overall_sales_performance AS
-  SELECT
-      SUM(sales) AS total_sales,
-      SUM(profit) AS total_profit,
-      COUNT(DISTINCT order_id) AS total_orders,
-      COUNT(DISTINCT customer_id) AS total_customers,
-      COUNT(DISTINCT product_id) AS total_products,
-      SUM(quantity) AS total_quantity_sold
-  FROM orders;
-  ```
+```sql
+/* overall_sales_performance */
+/* Provides overall business KPIs like total sales, profit, orders and customers. */
+CREATE OR REPLACE VIEW overall_sales_performance AS
+SELECT
+    SUM(sales) AS total_sales,
+    SUM(profit) AS total_profit,
+    COUNT(DISTINCT order_id) AS total_orders,
+    COUNT(DISTINCT customer_id) AS total_customers,
+    COUNT(DISTINCT product_id) AS total_products,
+    SUM(quantity) AS total_quantity_sold
+FROM orders;
+```
 
-  ```sql
-  /* state_wise_sales_and_customer_base */
-  /* Displays total sales and customer count by U.S. states. */
-  CREATE OR REPLACE VIEW state_wise_sales_and_customer_base AS 
-  SELECT
-      c.state,
-      SUM(o.sales) AS total_sales,
-      COUNT(DISTINCT c.customer_id) AS total_customers
-  FROM orders AS o
-  JOIN customers AS c
-  ON o.customer_id = c.customer_id
-  GROUP BY c.state;
-  ````
+```sql
+/* state_wise_sales_and_customer_base */
+/* Displays total sales and customer count by U.S. states. */
+CREATE OR REPLACE VIEW state_wise_sales_and_customer_base AS 
+SELECT
+    c.state,
+    SUM(o.sales) AS total_sales,
+    COUNT(DISTINCT c.customer_id) AS total_customers
+FROM orders AS o
+JOIN customers AS c
+ON o.customer_id = c.customer_id
+GROUP BY c.state;
+````
 
-  ```sql
-  /* segment_wise_monthly_sales_and_profit */
-  /* Tracks monthly sales and profit performance for each customer segment. */
-  CREATE OR REPLACE VIEW segment_wise_monthly_sales_and_profit AS
-  SELECT
-      c.segment,
-      TO_CHAR(o.order_date, 'Mon') AS month_name,
-      SUM(o.sales) AS total_sales,
-      SUM(o.profit) AS total_profit
-  FROM orders AS o
-  JOIN customers AS c
-  ON o.customer_id = c.customer_id
-  GROUP BY c.segment, month_name;
-  ```
+```sql
+/* segment_wise_monthly_sales_and_profit */
+/* Tracks monthly sales and profit performance for each customer segment. */
+CREATE OR REPLACE VIEW segment_wise_monthly_sales_and_profit AS
+SELECT
+    c.segment,
+    TO_CHAR(o.order_date, 'Mon') AS month_name,
+    SUM(o.sales) AS total_sales,
+    SUM(o.profit) AS total_profit
+FROM orders AS o
+JOIN customers AS c
+ON o.customer_id = c.customer_id
+GROUP BY c.segment, month_name;
+```
 
-  ```sql
-  /* region_wise_monthly_sales */
-  /* Shows monthly sales trends for each region. */
-  CREATE OR REPLACE VIEW region_wise_monthly_sales AS
-  SELECT
-      c.region,
-      TO_CHAR(o.order_date, 'Mon') AS month_name,
-      SUM(o.sales) AS total_sales
-  FROM orders AS o
-  JOIN customers AS c
-  ON o.customer_id = c.customer_id
-  GROUP BY c.region, month_name;
-  ```
+```sql
+/* region_wise_monthly_sales */
+/* Shows monthly sales trends for each region. */
+CREATE OR REPLACE VIEW region_wise_monthly_sales AS
+SELECT
+    c.region,
+    TO_CHAR(o.order_date, 'Mon') AS month_name,
+    SUM(o.sales) AS total_sales
+FROM orders AS o
+JOIN customers AS c
+ON o.customer_id = c.customer_id
+GROUP BY c.region, month_name;
+```
 
-  ```sql
-  /* overall_customers_performance */
-  /* Calculates average sales, profit, orders and quantity per customer. */
-  CREATE OR REPLACE VIEW overall_customers_performance AS
-  SELECT 
-      ROUND(SUM(o.sales)/COUNT(DISTINCT o.customer_id)) AS avg_sales_per_customer,
-      ROUND(SUM(o.profit)/COUNT(DISTINCT o.customer_id)) AS avg_profit_per_customer,
-      ROUND(COUNT(DISTINCT order_id)/COUNT(DISTINCT customer_id)) AS avg_orders_per_customer,
-      ROUND(SUM(o.quantity)/COUNT(DISTINCT o.customer_id)) AS avg_quantity_per_customer
-  FROM orders AS o;
-  ```
+```sql
+/* overall_customers_performance */
+/* Calculates average sales, profit, orders and quantity per customer. */
+CREATE OR REPLACE VIEW overall_customers_performance AS
+SELECT 
+    ROUND(SUM(o.sales)/COUNT(DISTINCT o.customer_id)) AS avg_sales_per_customer,
+    ROUND(SUM(o.profit)/COUNT(DISTINCT o.customer_id)) AS avg_profit_per_customer,
+    ROUND(COUNT(DISTINCT order_id)/COUNT(DISTINCT customer_id)) AS avg_orders_per_customer,
+    ROUND(SUM(o.quantity)/COUNT(DISTINCT o.customer_id)) AS avg_quantity_per_customer
+FROM orders AS o;
+```
 
-  ```sql
-  /* avg_discount_per_order_per_customer */
-  /* Computes the average discount per customer across all orders. */
-  CREATE OR REPLACE VIEW avg_discount_per_order_per_customer AS
-  SELECT
-      ROUND(AVG(customer_avg), 2) AS avg_discount_per_customer
-  FROM (
-      SELECT customer_id, AVG(discount) AS customer_avg
-      FROM orders
-      GROUP BY customer_id
-  ) AS sub;
-  ```
+```sql
+/* avg_discount_per_order_per_customer */
+/* Computes the average discount per customer across all orders. */
+CREATE OR REPLACE VIEW avg_discount_per_order_per_customer AS
+SELECT
+    ROUND(AVG(customer_avg), 2) AS avg_discount_per_customer
+FROM (
+    SELECT customer_id, AVG(discount) AS customer_avg
+    FROM orders
+    GROUP BY customer_id
+) AS sub;
+```
 
-  ```sql
-  /* category_wise_monthly_sales_and_profit */
-  /* Tracks monthly sales and profit for each product category. */
-  CREATE OR REPLACE VIEW category_wise_monthly_sales_and_profit AS
-  SELECT
-      p.category,
-      TO_CHAR(o.order_date, 'Mon') AS month,
-      SUM(o.sales) AS total_sales,
-      SUM(o.profit) AS total_profit
-  FROM orders AS o
-  JOIN products AS p
-  ON o.product_id = p.product_id
-  GROUP BY p.category, month;
-  ```
+```sql
+/* category_wise_monthly_sales_and_profit */
+/* Tracks monthly sales and profit for each product category. */
+CREATE OR REPLACE VIEW category_wise_monthly_sales_and_profit AS
+SELECT
+    p.category,
+    TO_CHAR(o.order_date, 'Mon') AS month,
+    SUM(o.sales) AS total_sales,
+    SUM(o.profit) AS total_profit
+FROM orders AS o
+JOIN products AS p
+ON o.product_id = p.product_id
+GROUP BY p.category, month;
+```
 
-  ```sql
-  /* sub_category_wise_sales_and_profit */
-  /* Summarizes total sales and profit by product sub-category. */
-  CREATE OR REPLACE VIEW sub_category_wise_sales_and_profit AS
-  SELECT
-      p.sub_category,
-      SUM(o.sales) AS total_sales,
-      SUM(o.profit) AS total_profit
-  FROM orders AS o
-  JOIN products AS p
-  ON o.product_id = p.product_id
-  GROUP BY p.sub_category;
-  ```
+```sql
+/* sub_category_wise_sales_and_profit */
+/* Summarizes total sales and profit by product sub-category. */
+CREATE OR REPLACE VIEW sub_category_wise_sales_and_profit AS
+SELECT
+    p.sub_category,
+    SUM(o.sales) AS total_sales,
+    SUM(o.profit) AS total_profit
+FROM orders AS o
+JOIN products AS p
+ON o.product_id = p.product_id
+GROUP BY p.sub_category;
+```
 
-  ```sql
-  /* category_wise_sales_profit_and_orders */
-  /* Shows total sales, profit and order count by product category. */
-  CREATE OR REPLACE VIEW category_wise_sales_profit_and_orders AS
-  SELECT
-      p.category,
-      SUM(o.sales) AS total_sales,
-      SUM(o.profit) AS total_profit,
-      COUNT(DISTINCT o.order_id) AS total_orders
-  FROM orders AS o
-  JOIN products AS p
-  ON o.product_id = p.product_id
-  GROUP BY p.category;
-  ```
+```sql
+/* category_wise_sales_profit_and_orders */
+/* Shows total sales, profit and order count by product category. */
+CREATE OR REPLACE VIEW category_wise_sales_profit_and_orders AS
+SELECT
+    p.category,
+    SUM(o.sales) AS total_sales,
+    SUM(o.profit) AS total_profit,
+    COUNT(DISTINCT o.order_id) AS total_orders
+FROM orders AS o
+JOIN products AS p
+ON o.product_id = p.product_id
+GROUP BY p.category;
+```
 
-  ```sql
-  /* state_wise_most_purchased_sub_category */
-  /* Identifies the most purchased sub-category in each U.S. state. */
-  CREATE OR REPLACE VIEW state_wise_most_purchased_sub_category AS
-  SELECT
-      c.state,
-      p.sub_category, 
-      SUM(o.quantity) AS quantity_sold,
-      RANK() OVER (PARTITION BY c.state ORDER BY SUM(o.quantity) DESC) AS sub_category_rank
-  FROM orders AS o
-  JOIN products AS p
-  ON o.product_id = p.product_id
-  JOIN customers AS c
-  ON o.customer_id = c.customer_id
-  GROUP BY c.state, p.sub_category;
-  ```
-  
+```sql
+/* state_wise_most_purchased_sub_category */
+/* Identifies the most purchased sub-category in each U.S. state. */
+CREATE OR REPLACE VIEW state_wise_most_purchased_sub_category AS
+SELECT
+    c.state,
+    p.sub_category, 
+    SUM(o.quantity) AS quantity_sold,
+    RANK() OVER (PARTITION BY c.state ORDER BY SUM(o.quantity) DESC) AS sub_category_rank
+FROM orders AS o
+JOIN products AS p
+ON o.product_id = p.product_id
+JOIN customers AS c
+ON o.customer_id = c.customer_id
+GROUP BY c.state, p.sub_category;
+```
 </details>
 
 <hr>
@@ -549,7 +558,7 @@ Instead of running complex queries every time, Power BI connects directly to the
 | **Script Name**    | **Purpose**                                                                                  |
 | :----------------- | :------------------------------------------------------------------------------------------- |
 | `etl.py`           | Sets up the database schema, cleans the dataset, and loads initial data into the database.   |
-| `create_views.py`  | Creates multiple SQL views that summarize and aggregate data for Power BI dashboard.     |
+| `create_views.py`  | Creates multiple SQL views that summarize and aggregate data for Power BI dashboard.         |
 | `generate_data.py` | Generates random synthetic transaction data to simulate daily updates in the database.       |
 
 ### How does the ETL pipeline work?
@@ -557,7 +566,7 @@ Instead of running complex queries every time, Power BI connects directly to the
 - This script handles the first step of the process by preparing the database.
 
 <details>
-<summary>Click here to view the entire script</summary>
+<summary>Click Here to view Sample Script</summary>
 <br>
   
 ```python
@@ -706,7 +715,6 @@ else:
     orders.to_sql("orders", engine, if_exists="append", index=False)
     logging.info("Initial data uploaded to Neon PostgreSQL Database successfully")
 ```
-
 </details>
 
 #### What does it do?
@@ -729,7 +737,7 @@ else:
 - This script builds SQL views in the PostgreSQL database to simplify analysis and reporting in Power BI.
 
 <details>
-<summary>Click Here to view the entire Script</summary>
+<summary>Click Here to view Sample Script</summary>
 <br>
   
 ```python
@@ -991,7 +999,7 @@ logging.info("Views created successfully in Neon PostgreSQL Database")
 - This script keeps the database updated with new transaction data for scheduled data refresh in Power BI.
 
 <details>
-<summary>Click Here to view the entire Script</summary>
+<summary>Click Here to view Sample Script</summary>
 <br>
 
 ```python
@@ -1109,30 +1117,30 @@ flowchart TB
 
   subgraph S2["2) ETL Pipeline<br/>(Python + SQLAlchemy)"]
     direction TB
-    B["Extract<br/>Load raw CSV data"]
-    C["Transform<br/>Clean + optimize"]
+    B["Extract<br/>Load Raw CSV Data"]
+    C["Transform<br/>Clean and Optimize"]
     D["Load<br/>Insert into Neon PostgreSQL"]
   end
 
   subgraph S3["3) Database Layer<br/>(Neon PostgreSQL)"]
     direction TB
     E["Tables<br/>customers, orders, products"]
-    F["SQL Views<br/>Business metric views"]
+    F["SQL Views<br/>Business Metric Views"]
   end
 
   subgraph S4["4) Automation<br/>(GitHub Actions)"]
     direction TB
-    G["Scheduled trigger<br/>cron: daily 10:00 AM"]
-    H["Run pipeline<br/>etl.py → generate_data.py"]
-    I["Refresh views<br/>create_views.py"]
-    J["Export views<br/>CSV exports + artifacts"]
-    K["Logs & monitoring<br/>Upload log artifacts"]
+    G["Scheduled Trigger<br/>cron → daily 10:00 AM"]
+    H["Run Pipeline<br/>etl.py → generate_data.py"]
+    I["Refresh Views<br/>create_views.py"]
+    J["Export Views<br/>CSV Export and Build Artifact"]
+    K["Logs & Monitoring<br/>Upload Log Artifacts"]
   end
 
   subgraph S5["5) Reporting<br/>(Power BI)"]
     direction TB
-    L["Power BI connects to views<br/>(DirectQuery / Import)"]
-    M["Dashboard pages<br/>Home, Overview, Customers, Products"]
+    L["Power BI connects to Views<br/>(DirectQuery)"]
+    M["Dashboard Pages<br/>Home, Overview, Customers, Products"]
     N["Insights<br/>Sales, Profit, Region, Trends"]
   end
 
@@ -1161,7 +1169,7 @@ This section highlights the key outcomes and insights generated from the ETL pip
 ### Pipeline Performance
 It includes pipeline performance metrics such as runtime, automation frequency, and reliability.
 
-#### 1. Data Loading Overview
+### 1. Data Loading Overview
 | **Parameter**          | **Value**                         |
 | :--------------------- | :-------------------------------- |
 | **Dataset Size**       | ~50,000 rows                      |
@@ -1172,7 +1180,9 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 > [!NOTE]
 > This setup mimics real-time superstore sales with daily updates to the `orders` and `customers` tables.
 
-#### 2. Automation & Scheduling
+<hr>
+
+### 2. Automation & Scheduling
 | **Attribute**           | **Details**                                         |
 | ----------------------- | :-------------------------------------------------- |
 | **Automation Tool**     | GitHub Actions                                      |
@@ -1186,7 +1196,9 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 
 <img title="Automation & Scheduling" src="https://github.com/user-attachments/assets/0708e2eb-6511-4962-bb36-2c77752a8f47">
 
-#### 3. Runtime Performance
+<hr>
+
+### 3. Runtime Performance
 | **Workflow Step**                    | **Description**                                      | **Runtime (sec)** |
 | :----------------------------------- | :--------------------------------------------------- | :---------------: |
 | **Set up job**                       | Initializes GitHub Actions environment               |        1s         |
@@ -1200,18 +1212,22 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 | **Upload Exported CSV as Artifacts** | Uploads exported CSVs to GitHub Actions artifacts    |        2s         |
 | **Commit and Push CSVs**             | Commits CSV files to the repository                  |        0s         |
 | **Upload Logs as Artifacts**         | Uploads log files for debugging and tracking         |        1s         |
-| **Post Setup/Cleanup Steps**         | Cleans the environment post-run                      |      0–2s         |
+| **Post Setup/Cleanup Steps**         | Cleans the environment post-run                      |        2s         |
 
 > [!NOTE]
 > **Total runtime :** ~40–50 seconds per pipeline run
 > 
 > **Scheduling :** The workflow is scheduled via `cron` (`30 4 * * *`), meaning it runs daily at **10:00 AM**.
+>
+> `cron` is in UTC (04:30 UTC = 10:00 AM IST)
 > 
 > The ETL pipeline runs within a minute, automatically refreshing dashboard data daily with no manual effort.
 
 <img title="Runtime Performance" src="https://github.com/user-attachments/assets/8dcf62d2-9bb8-4ef4-b0c4-292115dc5079">
 
-#### 4. Error Handling and Logging
+<hr>
+
+### 4. Error Handling and Logging
 | **Aspect**         | **Implementation Details**                                            |
 | :----------------- | :-------------------------------------------------------------------- |
 | **Error Tracking** | `try-except` blocks in each script                                    |
@@ -1222,7 +1238,9 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 > [!TIP]
 > Automated logging and secret handling remove the need for manual checks and ensure smooth workflow runs.
 
-#### 5. Reliability and Stability
+<hr>
+
+### 5. Reliability and Stability
 | **Metric**                | **Value**          | **Remarks**                                |
 | :------------------------ | :----------------- | :----------------------------------------- |
 | **Total Runtime**         | ~40 seconds        | Fast for daily automated ETL               |
@@ -1239,7 +1257,7 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 
 ### Dashboard Metrics
 
-#### 1. Shipping Mode Performance
+### 1. Shipping Mode Performance
 | **Shipping Mode** | **Total Sales (₹)** | **% of Total Sales** | **Total Profit (₹)** | **% of Total Profit** | **Profit Margin** |
 | ----------------- | ------------------: | -------------------: | -------------------: | --------------------: | ----------------: |
 | Standard Class    |           5,099,197 |            **59.7%** |              897,360 |             **59.8%** |         **17.6%** |
@@ -1259,7 +1277,9 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 
 </details>
 
-#### 2. Customer Segment Performance
+<hr>
+
+### 2. Customer Segment Performance
 | **Segment** | **Total Sales (₹)** | **% of Total Sales** | **Total Profit (₹)** | **% of Total Profit** | **Profit Margin** |
 | ----------- | ------------------: | -------------------: | -------------------: | --------------------: | ----------------: |
 | Consumer    |           4,263,570 |            **49.9%** |              757,416 |             **50.5%** |         **17.8%** |
@@ -1278,7 +1298,9 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 
 </details>
 
-#### 3. Monthly Sales & Profit Performance
+<hr>
+
+### 3. Monthly Sales & Profit Performance
 | **Month** | **Total Sales (₹)** | **% of Total Sales** | **Total Profit (₹)** | **% of Total Profit** | **Profit Margin** |
 | :-------- | ------------------: | -------------------: | -------------------: | --------------------: | ----------------: |
 | Jan       |             731,193 |             **8.6%** |              130,941 |              **8.7%** |         **17.9%** |
@@ -1305,7 +1327,9 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 
 </details>
 
-#### 4. Regional Performance Insights
+<hr>
+
+### 4. Regional Performance Insights
 | **Region**  | **Total Sales (₹)** | **% of Total Sales** | **Total Profit (₹)** | **% of Total Profit** |
 | ----------- | ------------------: | -------------------: | -------------------: | --------------------: |
 | **West**    |           2,484,870 |                 ~29% |              440,814 |                  ~29% |
@@ -1325,7 +1349,9 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 
 </details>
 
-#### 5. Sub-Category Performance
+<hr>
+
+### 5. Sub-Category Performance
 | **Sub-Category**          | **Total Sales (₹)** | **% of Total Sales** | **Total Profit (₹)** | **% of Total Profit** |
 | ------------------------- | ------------------: | -------------------: | -------------------: | --------------------: |
 | Paper                     |           1,260,080 |                 ~15% |              223,147 |                  ~15% |
@@ -1350,7 +1376,9 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 
 </details>
 
-#### 6. State-wise Sales Performance (Top 5 States)
+<hr>
+
+### 6. State-wise Sales Performance (Top 5 States)
 | **State**    | **Total Sales (₹)** | **Total Customers** | **% of Total Sales** |
 | :----------- | ------------------: | ------------------: | -------------------: |
 | California   |           1,792,545 |                 188 |            **21.4%** |
@@ -1368,6 +1396,33 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 - Top 5 states account for ~54% of total revenue (~4.5M), showing sales concentration in key urban and economically active areas.
 
 </details>
+
+<hr>
+
+## Impact
+
+### Key Outcomes
+- Built an end-to-end Power BI dashboard connected to a PostgreSQL database containing 50,000+ sales records.
+- Improved daily data update time from hours to under a minute (average ~45 sec) using GitHub Actions.
+- Reduced reporting time by 80% through automation, delivering updated insights in under a minute.
+- Delivered a reliable, low-latency, fully automated data pipeline with zero manual intervention.
+- Achieved 100% workflow reliability, with zero pipeline failures since deployment (as recorded in GitHub Actions).
+
+### Dataset & Database Metrics
+| **Parameter**          | **Value**                         |
+| :--------------------- | :-------------------------------- |
+| **Dataset Size**       | ~50,000 rows                      |
+| **Tables Used**        | `customers`, `orders`, `products` |
+| **Avg. Daily Inserts** | ~100 records                      |
+| **Database**           | Neon PostgreSQL (cloud-hosted)    |
+
+### Pipeline Performance Metrics
+| Metric                |              Value | Remarks                                    |
+| --------------------- | -----------------: | ------------------------------------------ |
+| Total Runtime         |     ~40–50 seconds | Fast daily automated ETL refresh           |
+| Success Rate          |               100% | Verified via GitHub Actions workflow panel |
+| Avg. Records Inserted |      ~100 rows/day | Lightweight incremental daily updates      |
+| Resource Utilization  |     Low CPU/Memory | Efficient for cloud runners                |
 
 <hr>
 
@@ -1536,8 +1591,8 @@ DB_PASS: ${{ secrets.DB_PASS }}
 - It runs every day at 10:00 AM and ensures that the latest data are always updated.
 
 <details>
-  <summary>Click Here to view the entire Script</summary>
-  <br>
+<summary>Click Here to view GitHub Actions YAML File</summary>
+<br>
 
 ```yaml
 # ---------------- Name of the Workflow ----------------
@@ -1789,7 +1844,7 @@ jobs:
 ## Power BI Dashboard
 - The Power BI dashboard is designed to turn data into insights with a clean and interactive interface.
 - It connects directly to the database, ensuring the dashboard always reflects the most recent data.
-- The dashboard consists of four main pages: **Home**, **Overview**, **Customers**, and **Products**.
+- The dashboard consists of four main pages : Home, Overview, Customers, and Products.
 - All pages are connected through page navigation and drill-through features.
 
 ### 1. Home Page
@@ -1797,7 +1852,7 @@ jobs:
   
 ### Key Components
 - **Navigation Buttons**
-  - Interactive page navigator that links to the **Overview**, **Customers**, and **Products** pages.
+  - Interactive page navigator that links to the Overview, Customers, and Products pages.
 - **Dashboard Branding**
   - Displays a themed background image for a modern look.
 - **User Experience**
@@ -1811,24 +1866,24 @@ jobs:
 - This page focuses on a high-level summary of overall business performance like orders, customers and products.
   
 ### Key Components
-- **Multi-Row Cards - Key Business Metrics**
-  - Data View: `overall_sales_performance`
-  - Purpose: Gives an instant snapshot of business performance at a glance.
-- **Filled Map - Sales by State**
-  - Data View: `state_wise_sales_and_customer_base`
-  - Purpose: Visualizes geographic sales distribution, showing which states drive the most revenue.
-- **Donut Chart - Shipping Performance**
-  - Data View: `shipping_performance`
-  - Purpose: Compares sales and profit by shipping mode, helping identify cost-effective delivery methods.
-- **Stacked Bar Chart - Segment-wise Sales & Profit**
-  - Data View: `segment_wise_sales_and_profit`
-  - Purpose: Shows sales and profit across customer segments.
-- **Bar Chart - Top Customers by Sales**
-  - Data View: `top_customers_by_sales`
-  - Purpose: Highlights top-performing customers, helping identify key contributors to revenue.
-- **Filled Area Chart - Monthly Sales & Profit Trend**
-  - Data View: `month_wise_sales_and_profit`
-  - Purpose: Displays month-wise trends of sales and profit to track seasonal performance and growth.
+- **Multi-Row Cards : Key Business Metrics**
+  - Data View : `overall_sales_performance`
+  - Purpose : Gives an instant snapshot of business performance at a glance.
+- **Filled Map : Sales by State**
+  - Data View : `state_wise_sales_and_customer_base`
+  - Purpose : Visualizes geographic sales distribution, showing which states drive the most revenue.
+- **Donut Chart : Shipping Performance**
+  - Data View : `shipping_performance`
+  - Purpose : Compares sales and profit by shipping mode, helping identify cost-effective delivery methods.
+- **Stacked Bar Chart : Segment-wise Sales & Profit**
+  - Data View : `segment_wise_sales_and_profit`
+  - Purpose : Shows sales and profit across customer segments.
+- **Bar Chart : Top Customers by Sales**
+  - Data View : `top_customers_by_sales`
+  - Purpose : Highlights top-performing customers, helping identify key contributors to revenue.
+- **Filled Area Chart : Monthly Sales & Profit Trend**
+  - Data View : `month_wise_sales_and_profit`
+  - Purpose : Displays month-wise trends of sales and profit to track seasonal performance and growth.
 
 <img title="Overview" src="https://github.com/user-attachments/assets/5584efcc-c10a-40c0-b18c-18e907ea64df">
 
@@ -1838,21 +1893,21 @@ jobs:
 - This page focuses on understanding customer behavior, performance, and geographic distribution.
 
 ### Key Components
-- **Multi-Row Card - Customer Performance Summary**
-  - Data View: `overall_customers_performance`
-  - Purpose: Provides an overview of how much each customer contributes on average to sales and profit.
-- **Filled Map - State-wise Customer Base**
-  - Data View: `state_wise_sales_and_customer_base`
-  - Purpose: Visualizes customer distribution across states, helping identify regions with largest customer base.
-- **Stacked Column Chart - Region-wise Monthly Sales**
-  - Data View: `region_wise_monthly_sales`
-  - Purpose: Tracks how sales vary across regions and months, helping spot seasonal and regional trends.
-- **Stacked Column Chart - Region-wise Sales & Profit**
-  - Data View: `region_wise_sales_and_profit`
-  - Purpose: Compares overall sales and profit across regions to identify high- and low-performing areas.
-- **Dual Area Charts - Segment-wise Monthly Sales & Profit**
-  - Data View: `segment_wise_monthly_sales_and_profit`
-  - Purpose: Visualizes monthly trends of sales and profit across customer segments.
+- **Multi-Row Card : Customer Performance Summary**
+  - Data View : `overall_customers_performance`
+  - Purpose : Provides an overview of how much each customer contributes on average to sales and profit.
+- **Filled Map : State-wise Customer Base**
+  - Data View : `state_wise_sales_and_customer_base`
+  - Purpose : Visualizes customer distribution across states, helping identify regions with largest customer base.
+- **Stacked Column Chart : Region-wise Monthly Sales**
+  - Data View : `region_wise_monthly_sales`
+  - Purpose : Tracks how sales vary across regions and months, helping spot seasonal and regional trends.
+- **Stacked Column Chart : Region-wise Sales & Profit**
+  - Data View : `region_wise_sales_and_profit`
+  - Purpose : Compares overall sales and profit across regions to identify high- and low-performing areas.
+- **Dual Area Charts : Segment-wise Monthly Sales & Profit**
+  - Data View : `segment_wise_monthly_sales_and_profit`
+  - Purpose : Visualizes monthly trends of sales and profit across customer segments.
 
 <img title="Customers" src="https://github.com/user-attachments/assets/fd6944a8-59af-43e3-a78d-18b1f92386a4">
 
@@ -1862,31 +1917,31 @@ jobs:
 - This page focuses on analyzing product performance, category trends, and geographic purchasing behavior.
   
 ### Key Components
-- **Filled Map - State-wise Most Purchased Sub-category**
-  - Data View: `state_wise_most_purchased_sub_category`
-  - Purpose: Identifies regional preferences and popular product types across states.
-- **Treemap - Category-wise Orders**
-  - Data View: `category_wise_sales_profit_and_orders`
-  - Purpose: Visualizes which categories dominate in orders and their contribution to the business.
-- **Stacked Column Chart - Category-wise Sales and Profit**
-  - Data View: `category_wise_sales_profit_and_orders`
-  - Purpose: Shows which categories dominate in sales and profit and their contribution to the business.
-- **Stacked Bar Chart - Sub-category-wise Sales & Profit**
-  - Data View: `sub_category_wise_sales_and_profit`
-  - Purpose: Compares business performance across all product sub-categories.
-- **Dual Ribbon Charts - Category-wise Monthly Sales & Profit Trends**
-  - Data View: `category_wise_monthly_sales_and_profit`
-  - Purpose: Tracks how each product category performs across months to identify growth patterns.
-- **Gauge Chart - Profit Margin Tracker**
-  - Data Source:
+- **Filled Map : State-wise Most Purchased Sub-category**
+  - Data View : `state_wise_most_purchased_sub_category`
+  - Purpose : Identifies regional preferences and popular product types across states.
+- **Treemap : Category-wise Orders**
+  - Data View : `category_wise_sales_profit_and_orders`
+  - Purpose : Visualizes which categories dominate in orders and their contribution to the business.
+- **Stacked Column Chart : Category-wise Sales and Profit**
+  - Data View : `category_wise_sales_profit_and_orders`
+  - Purpose : Shows which categories dominate in sales and profit and their contribution to the business.
+- **Stacked Bar Chart : Sub-category-wise Sales & Profit**
+  - Data View : `sub_category_wise_sales_and_profit`
+  - Purpose : Compares business performance across all product sub-categories.
+- **Dual Ribbon Charts : Category-wise Monthly Sales & Profit Trends**
+  - Data View : `category_wise_monthly_sales_and_profit`
+  - Purpose : Tracks how each product category performs across months to identify growth patterns.
+- **Gauge Chart : Profit Margin Tracker**
+  - Data Source :
     - Calculated using total sales and profit.
-  - Configuration:
-    - Minimum: 0%
-    - Maximum: 40%
-    - Target: 30%
-  - Purpose:
+  - Configuration :
+    - Minimum : 0%
+    - Maximum : 40%
+    - Target : 30%
+  - Purpose :
     - Tracks the current profit margin against the target (30%).
-  - Color Logic:
+  - Color Logic :
     - Red (0–10%) → Low profit margin, needs improvement.
     - Yellow (10–20%) → Moderate margin, progressing toward target.
     - Green (20–40%) → Healthy profit margin, close to or exceeding target.
