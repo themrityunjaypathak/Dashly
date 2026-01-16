@@ -1269,11 +1269,11 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 <summary>Click Here to view Key Insights</summary>
 &nbsp;
 
-- Standard Class drives ~60% of total sales (~₹5.1M) and profit (~₹897K), making it the most profitable and preferred shipping mode.
-- Second Class accounts for ~19% of total sales (~₹1.65M) and profit (~₹293K), showing moderate usage.
-- First Class brings in ~16% of revenue (~₹1.34M) and ~15% of profit (~₹231K), preferred for premium deliveries.
-- Same Day shipping makes up only ~5% of sales (~₹0.44M) and profit (~₹79K), least used but fastest option.
-- Profit margins stay steady across modes (~17–18%), indicating balanced logistics and pricing control.
+- Standard Class drives ~60% of total sales (~₹5.1M) and profit (~₹897K), making it the dominant shipping mode.
+- Second Class contributes ~19% of sales (~₹1.65M) and profit (~₹293K), showing steady usage.
+- First Class accounts for ~16% of sales (~₹1.34M) and ~15% of profit (~₹231K), preferred for faster delivery.
+- Same Day contributes ~5% of sales (~₹0.44M) and profit (~₹79K), lowest usage but fastest option.
+- Profit margins remain consistent across modes (~17–18%), indicating stable logistics and pricing control.
 
 </details>
 
@@ -1291,10 +1291,10 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 &nbsp;
 
 - Consumer Segment is the main revenue driver, generating ~50% of total sales (~₹4.26M) and profit (~₹757K).
-- Corporate Segment provides ~32% of total sales (~₹2.74M) and profit (~₹476K), showing steady B2B growth.
-- Home Office Segment delivers ~18% of revenue (~₹1.53M) and profit (~₹266K), smaller but reliable segment.
-- Profit margins are consistent across all segments (~17–18%), highlighting balanced pricing and operational control.
-- Potential growth opportunity lies in expanding Home Office sales through targeted marketing or discount strategies.
+- Corporate Segment contributes ~32% of sales (~₹2.74M) and profit (~₹476K), showing steady B2B growth.
+- Home Office delivers ~18% of revenue (~₹1.53M) and profit (~₹266K), smaller but reliable.
+- Profit margins remain consistent across segments, indicating balanced pricing and operational control.
+- Potential growth opportunity lies in expanding Home Office sales through targeted marketing.
 
 </details>
 
@@ -1320,10 +1320,10 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 <summary>Click Here to view Key Insights</summary>
 &nbsp;
 
-- Q4 (Oct–Dec) drives ~27% of yearly sales and profit, making it the best-performing quarter, great time for offers and stock planning.
-- Profit margins stay steady (17–18%) throughout the year, showing good cost control and consistent pricing.
-- March and December are strong sales months, ideal for marketing campaigns and promotions.
-- Overall, sales and profits stay balanced across months, reflecting smooth and stable business performance.
+- Q4 (Oct–Dec) drives ~27% of annual sales and profit, making it the strongest quarter for promotions.
+- Profit margins stay steady at ~17–18% throughout the year, indicating consistent pricing and good cost control.
+- March and December are peak months, ideal for running marketing campaigns and seasonal offers.
+- Sales and profit remain balanced across months, reflecting stable and predictable business performance.
 
 </details>
 
@@ -1341,11 +1341,11 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 <summary>Click Here to view Key Insights</summary>
 &nbsp;
 
-- West Region accounts for ~29% of total revenue (~₹2.48M) and profit (~₹441K), making it the top-performing region.
-- East Region generates ~29% of total sales (~₹2.46M) and ~28% of total profit (~₹428K), showing strong and balanced growth.
-- Central Region adds ~23% of total revenue (~₹1.99M) and profit (~₹352K), indicating steady mid-range performance.
-- South Region contributes ~19% of total revenue (~₹1.61M) and profit (~₹279K), lowest among all regions, suggesting scope for sales expansion.
-- Overall, profit margins remain consistent (~17–18%), showing healthy operations across all regions.
+- West leads with ~29% of revenue (~₹2.48M) and profit (~₹441K), making it the top-performing region.
+- East contributes ~29% of sales (~₹2.46M) and ~28% of profit (~₹428K), showing strong and balanced growth.
+- Central adds ~23% of revenue (~₹1.99M) and profit (~₹352K), reflecting steady mid-level performance.
+- South accounts for ~19% of revenue (~₹1.61M) and profit (~₹279K), highlighting a key growth opportunity.
+- Profit margins remain consistent across regions (~17–18%), indicating stable operations.
 
 </details>
 
@@ -1368,11 +1368,11 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 <summary>Click Here to view Key Insights</summary>
 &nbsp;
 
-- Paper leads in products sub-categories, driving ~15% of total sales (~₹1.26M) and profit (~₹223K).
-- Binders, Phones and Furnishings together contribute ~31% of revenue (~₹2.66M), forming the core profit cluster.
-- Art, Storage and Accessories act as strong mid-tier performers, keeping profit margins steady around 17–18%.
-- Lower-performing items like Copiers and Supplies together make <5% of total profit, indicating limited business impact.
-- Expanding high-value categories (Paper, Phones, Furnishings) can help grow revenue without affecting margin stability.
+- Paper is the top-performing sub-category, contributing ~15% of total sales (~₹1.26M) and profit (~₹223K).
+- Binders, Phones, and Furnishings contributed to ~31% of profit (~₹2.66M), forming the high-performing cluster.
+- Art, Storage, and Accessories are solid mid-tier performers, keeping profit margins stable around ~17–18%.
+- Sub-categories like Copiers and Supplies contribute <5% of total profit, showing limited business impact.
+- Scaling high-value categories (Paper, Phones, Furnishings) can boost revenue while maintaining stable margins.
 
 </details>
 
@@ -1391,9 +1391,9 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 <summary>Click Here to view Key Insights</summary>
 &nbsp;
 
-- California dominates with ~21% of total sales (~1.8M) and the largest customer base (188), store's strongest regional market.
-- New York and Texas together contribute ~22% of total sales (~1.8M), showing strong demand in high-density regions.
-- Top 5 states account for ~54% of total revenue (~4.5M), showing sales concentration in key urban and economically active areas.
+- California leads with ~21% sales (~₹1.8M) and the highest customer base (188), making it the strongest market.
+- New York + Texas contribute ~22% sales (~₹1.8M), showing strong demand in high-density regions.
+- Top 5 states generate ~54% revenue (~₹4.5M), highlighting sales concentration in key markets.
 
 </details>
 
@@ -1401,28 +1401,11 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 
 ## Impact
 
-### Key Outcomes
 - Built an end-to-end Power BI dashboard connected to a PostgreSQL database containing 50,000+ sales records.
 - Improved daily data update time from hours to under a minute (average ~45 sec) using GitHub Actions.
 - Reduced reporting time by 80% through automation, delivering updated insights in under a minute.
 - Delivered a reliable, low-latency, fully automated data pipeline with zero manual intervention.
 - Achieved 100% workflow reliability, with zero pipeline failures since deployment (as recorded in GitHub Actions).
-
-### Dataset & Database Metrics
-| **Parameter**          | **Value**                         |
-| :--------------------- | :-------------------------------- |
-| **Dataset Size**       | ~50,000 rows                      |
-| **Tables Used**        | `customers`, `orders`, `products` |
-| **Avg. Daily Inserts** | ~100 records                      |
-| **Database**           | Neon PostgreSQL (cloud-hosted)    |
-
-### Pipeline Performance Metrics
-| Metric                |              Value | Remarks                                    |
-| --------------------- | -----------------: | ------------------------------------------ |
-| Total Runtime         |     ~40–50 seconds | Fast daily automated ETL refresh           |
-| Success Rate          |               100% | Verified via GitHub Actions workflow panel |
-| Avg. Records Inserted |      ~100 rows/day | Lightweight incremental daily updates      |
-| Resource Utilization  |     Low CPU/Memory | Efficient for cloud runners                |
 
 <hr>
 
@@ -1537,7 +1520,6 @@ DB_NAME=dbname
     - For live data refresh, choose DirectQuery Mode.
     
 </details>
-&nbsp;
 
 - Once connected, you'll see a list of all available tables and views from your Neon database.
 - Select the ones you want to use in your report and Click Load.
