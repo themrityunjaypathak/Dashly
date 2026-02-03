@@ -1,32 +1,26 @@
 <h2 align="center">Dashly : Live Sales Dashboard</h2>
 
 <p align="center">
-  <!-- Live Demo -->
   <a href="https://app.powerbi.com/view?r=eyJrIjoiZTgxODBhYmMtYjc1Zi00YjVkLWIyZDItZDYxY2RjZmIwNGY5IiwidCI6ImZhYjAyYzVkLTYxYjYtNGIxMi05ZTY2LTdhMDhkOWY0ZmNjMSJ9&pageName=5b9aaf645951a59cacdc" target="_blank">
     <img src="https://img.shields.io/badge/Live%20Demo-Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black" />
   </a>
 
-  <!-- Python -->
   <a href="https://www.python.org/" target="_blank">
     <img src="https://img.shields.io/badge/Python-v3.13-3776AB?style=flat&logo=python&logoColor=white" />
   </a>
 
-  <!-- PostgreSQL -->
   <a href="https://www.postgresql.org/" target="_blank">
     <img src="https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=flat&logo=postgresql&logoColor=white" />
   </a>
 
-  <!-- SQLAlchemy -->
   <a href="https://www.sqlalchemy.org/" target="_blank">
     <img src="https://img.shields.io/badge/SQLAlchemy-v2.0-D71F00?style=flat&logo=sqlalchemy&logoColor=white" />
   </a>
 
-  <!-- Git -->
   <a href="https://git-scm.com/" target="_blank">
     <img src="https://img.shields.io/badge/Git-v2.47-F05032?style=flat&logo=git&logoColor=white" />
   </a>
 
-  <!-- GitHub Actions -->
   <a href="https://github.com/themrityunjaypathak/Dashly/actions/workflows/etl_pipeline.yaml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/TheMrityunjayPathak/Dashly/etl_pipeline.yaml?style=flat&label=GitHub%20Actions&logo=githubactions&logoColor=white" />
   </a>
@@ -38,18 +32,18 @@
 
 ## Table of Contents
 - [Problem Statement](#problem-statement)
-- [Project Objective](#project-objective)
-- [Setup](#setup)
+- [Overview](#overview)
+- [Workflow](#workflow)
 - [ER Diagram](#er-diagram)
 - [Database Schema](#database-schema)
 - [SQL Views](#sql-views)
+- [Setup](#setup)
 - [ETL Pipeline](#etl-pipeline)
-- [Workflow](#workflow)
-- [GitHub Actions](#github-actions)
-- [Power BI Dashboard](#power-bi-dashboard)
 - [Results & Insights](#results--insights)
 - [Impact](#impact)
 - [How To](#how-to)
+- [GitHub Actions](#github-actions)
+- [Power BI Dashboard](#power-bi-dashboard)
 - [Folder Structure](#folder-structure)
 - [License](#license)
 
@@ -74,185 +68,17 @@ Currently, the store relies heavily on multiple spreadsheets and manual SQL quer
 
 <hr>
 
-## Project Objective
-Build an automated system for Quick Buy that provides accurate and up-to-date business insights.
-
-To achieve this, the project focuses on the following objectives :
-- **Centralized Data Storage**
-  - Store all business data (orders, customers, and products) in a single SQL database.
-  - Ensure data is well-structured, accurate, and easy to access.
-- **Automated ETL Pipeline**
-  - Build an ETL (Extract, Transform, Load) pipeline using Python and SQLAlchemy.
-  - Automatically load new data into the database on a daily schedule.
-  - Reduce manual reporting work and save time for analytics.
-- **Data Cleaning and Transformation**
-  - Automatically clean raw data by fixing missing, duplicate, or inconsistent values.
-  - Ensure data is clean and ready for analysis.
-- **Secure and Stable Database Connection**
-  - Use a secure connection between Python and the database.
-  - Store credentials safely using configuration files or environment variables.
-  - Keep the system stable with a low chance of connection failure.
-- **SQL Views for Business Insights**
-  - Create SQL views to simplify complex queries and calculations.
-  - Use these views as a consistent data source for the dashboard.
-- **Interactive Power BI Dashboard**
-  - Build a dashboard to visualize different aspects of the business such as orders, customers, etc.
-  - Make the dashboard simple, clear, and useful for both technical and non-technical users.
-- **Daily Report Refresh & Monitoring**
-  - Schedule automatic daily dashboard refreshes to display the most up-to-date data.
-  - Add basic logging to monitor ETL runs and quickly identify failures.
+## Overview
+- Designed a fully automated ETL pipeline using Python, SQLAlchemy and GitHub Actions for daily data updates.
+- Built Python ETL scripts to extract, transform and load 50,000+ sales records into a Neon PostgreSQL database.
+- Automated daily data generation (~100 new transactions daily) to simulate real-time sales activity.
+- Integrated Power BI with the database, enabling a real-time, auto-refreshing dashboard without manual updates.
 
 <hr>
 
-## Setup
+## Workflow
 
-### 1. Clone the Repository
-First, clone the project from GitHub to your local system.
-```bash
-git clone https://github.com/themrityunjaypathak/Dashly.git
-````
-
-### 2. Set Up a Virtual Environment
-To avoid version conflicts and keep your project isolated, create a virtual environment.
-
-On Windows :
-```bash
-python -m venv .venv
-```
-
-On macOS/Linux :
-```bash
-python3 -m venv .venv
-```
-
-### 3. Activate the Virtual Environment
-After setting up the virtual environment, activate it to begin installing dependencies.
-
-On Windows :
-```bash
-.\.venv\Scripts\activate
-```
-
-On macOS/Linux :
-```bash
-source .venv/bin/activate
-```
-
-### 4. Install the Project Dependencies
-Now, install all the required libraries inside your virtual environment using the `requirements.txt` file.
-```bash
-pip install -r requirements.txt
-```
-
-> [!TIP]
-> It's a good idea to upgrade `pip` before installing dependencies to avoid compatibility issues.
-```bash
-pip install --upgrade pip
-```
-
-> [!NOTE]
-> Use the same Python version as in `.github/workflows/etl_pipeline.yml` to avoid compatibility issues.
-
-### 5. Setup Environment Variables
-This project uses a `.env` file to store database credentials like `DB_USER`, `DB_PASS`, `DB_NAME`, etc.
-
-Environment variables are stored in plain text.
-```ini
-# .env
-DB_HOST=host_name
-DB_NAME=database_name
-DB_USER=user_name
-DB_PASS=password
-```
-
-> [!IMPORTANT]
-> Make sure not to commit your `.env` file to GitHub or any public repositories.
->
-> You can add it to `.gitignore` to ensure it's excluded from version control.
-
-> [!NOTE]
-> If you want to create a free Database in Neon and connect it with Python, go to [How To](#how-to) section.
-
-### 6. Database Connectivity Check
-Confirm that the PostgreSQL connection works before running ETL scripts.
-
-This avoids script crashes due to invalid credentials or blocked ports.
-
-<details>
-<summary>Click Here to view Code Snippet</summary>
-<br>
-
-```python
-# Importing Libraries
-import os
-from dotenv import load_dotenv
-from sqlalchemy import create_engine
-
-# Loading Environment File
-load_dotenv()
-
-# Loading Database Credentials from Environment File
-DB_HOST = os.getenv("DB_HOST")
-DB_NAME = os.getenv("DB_NAME")
-DB_USER = os.getenv("DB_USER")
-DB_PASS = os.getenv("DB_PASS")
-
-# Creating SQLAlchemy Engine
-engine = create_engine(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}?sslmode=require&channel_binding=require", pool_pre_ping=True)
-```
-</details>
-
-### 7. Run ETL Script
-This initializes the database and :
-- Cleans raw CSV data
-- Creates tables (`customers`, `orders`, `products`)
-- Loads data into the Neon PostgreSQL Database
-```bash
-python scripts/etl.py
-```
-
-> [!NOTE]
-> Run this only once initially or when you want a full database refresh.
-
-### 8. Create SQL Views
-This script builds reusable SQL views that summarize business metrics for the Power BI dashboard.
-
-It simplifies queries, ensures consistent logic, and improves performance.
-```bash
-python scripts/create_views.py
-```
-
-### 9. Generate New Data (Optional)
-Simulates daily transactions by generating new random data for testing pipeline automation.
-
-Helps verify how dashboards respond to new data over time.
-```bash
-python scripts/generate_data.py
-```
-
-### 10. Export Views as CSVs (Optional)
-Exports SQL view results to CSV files inside the `views/` folder.
-
-This is useful for sharing datasets or validating dashboard data without connecting to the database.
-```bash
-python scripts/export_views.py
-```
-
-### 11. Simulate Full Workflow Locally
-Running all scripts manually helps confirm everything works locally before enabling the scheduled GitHub run.
-```bash
-python scripts/etl.py
-python scripts/create_views.py
-python scripts/generate_data.py
-python scripts/export_views.py
-```
-
-### 12. Check Logs
-- Check log files inside the `logs/` folder :
-  - `etl.log` → Initial data loading
-  - `create_views.log` → SQL views creation
-  - `generate_data.log` → Daily data generation
-- Logs help you monitor pipeline performance and troubleshoot errors quickly.
+[![](https://mermaid.ink/img/pako:eNqFVdtu4zYQ_ZWBgi26WMa15EtibbGAL0mcxE69cboPrYuClsYyEZkUSCqJG-RPiv24_ZIOKcf2ZgHXD2NpOOfMhYfUc5CoFIM4WOTqMVlybeGuN5MzCWDKeaZ5sYRp-OcsCGsw4JbDVJU6wVnwlwsBSIXGxAolPcx5uhQ8LQvUxiqN0J9--XWuf_n0s-E5mr9T4qgl5uH9hgFl-jZbRARRDc7uRjARBeZCYsUwWdslJfoA08-jbp4scbV-f6CQHvGcPVnNE1vhR4qncMsfXU2-mR26T7F3mkuzUHpVRfdz5BK4TGGisdAqQWN2gAEBHF8VeykN0uSEtApukGqYKGMzjVSoTzTnBg903CCyRm0bCSO-Rl0xv2E71O-Z64HPacoVNClpB1a0DwyUTv0_tZGWid3r49ztFlX5ReDjBtcrDY3cGBij1SKplg5U3ySKZg26JWXjrqKK5kLYYTmHri_SHCr8wtVA25mWOaZwp0WWvbafaIr79vVfSLnI1xDW43oduuMd25Cwt6V8oxS0ea1Ye2CGEjW3WCmv2FPMpYPiQqNZ7refaHThD87zXfyV11OhaKP3wp2WNl6nlV4p8hS62ooF6W4HvvZ6yQz8BGMlBR0NIbOK4fcid8Kk1S3u0LhbxNSqwS26nFuSiXpEDb3LQ3MeEfI1DhIlJa0bIMnutTPwqM8l6r3OxwQccLOcK67pOPDsVWJD0heD3x5Qu3Ex6O8kN_lBajfEQgdFZEu7gU_dleBDF8IyaimjchkpgNomP9qk9sMg3r2DMRcS3HaCu7ScswvHx5-g523f24G3Z96eezvyduztzZZrp9ot2YUPGXp76e2Vt9dusXIP3GO1du4eNxl2FQopVjyH6gwcG75AKljfg7FrUmnmwpKcGzPABcxzldzDQuR5fFRPwzA8YcZqdY_xUaPeaDfSzevxo0jtMo6KJ5aoXOn4aOF_H79jMxYL2LCF7XAeRVu203mn2cH_Z9vy0c3PphGbNti0yaatqtJdOuiyHuuzATtj5-yCDdklu2LXbMTG7MbX8TFgQaZFGsRWl8gCUsaKu9fg2ZHMAkt3OH1LYnp045kFM_lCmILLP5RavcK0KrNlEC94buitLGjrcSA4nYfV1uskg7qvSmmDOIyaniSIn4OnIG61a6edVqMdtuun7XrUOWHBOoiPT8gfdqJOp9OITlut8IUF__isUS2sN8N6PYpOGq1Wp0XxmLojO64-lf6L-fIf0P9JSw?type=png)](https://mermaid.live/edit#pako:eNqFVdtu4zYQ_ZWBgi26WMa15EtibbGAL0mcxE69cboPrYuClsYyEZkUSCqJG-RPiv24_ZIOKcf2ZgHXD2NpOOfMhYfUc5CoFIM4WOTqMVlybeGuN5MzCWDKeaZ5sYRp-OcsCGsw4JbDVJU6wVnwlwsBSIXGxAolPcx5uhQ8LQvUxiqN0J9--XWuf_n0s-E5mr9T4qgl5uH9hgFl-jZbRARRDc7uRjARBeZCYsUwWdslJfoA08-jbp4scbV-f6CQHvGcPVnNE1vhR4qncMsfXU2-mR26T7F3mkuzUHpVRfdz5BK4TGGisdAqQWN2gAEBHF8VeykN0uSEtApukGqYKGMzjVSoTzTnBg903CCyRm0bCSO-Rl0xv2E71O-Z64HPacoVNClpB1a0DwyUTv0_tZGWid3r49ztFlX5ReDjBtcrDY3cGBij1SKplg5U3ySKZg26JWXjrqKK5kLYYTmHri_SHCr8wtVA25mWOaZwp0WWvbafaIr79vVfSLnI1xDW43oduuMd25Cwt6V8oxS0ea1Ye2CGEjW3WCmv2FPMpYPiQqNZ7refaHThD87zXfyV11OhaKP3wp2WNl6nlV4p8hS62ooF6W4HvvZ6yQz8BGMlBR0NIbOK4fcid8Kk1S3u0LhbxNSqwS26nFuSiXpEDb3LQ3MeEfI1DhIlJa0bIMnutTPwqM8l6r3OxwQccLOcK67pOPDsVWJD0heD3x5Qu3Ex6O8kN_lBajfEQgdFZEu7gU_dleBDF8IyaimjchkpgNomP9qk9sMg3r2DMRcS3HaCu7ScswvHx5-g523f24G3Z96eezvyduztzZZrp9ot2YUPGXp76e2Vt9dusXIP3GO1du4eNxl2FQopVjyH6gwcG75AKljfg7FrUmnmwpKcGzPABcxzldzDQuR5fFRPwzA8YcZqdY_xUaPeaDfSzevxo0jtMo6KJ5aoXOn4aOF_H79jMxYL2LCF7XAeRVu203mn2cH_Z9vy0c3PphGbNti0yaatqtJdOuiyHuuzATtj5-yCDdklu2LXbMTG7MbX8TFgQaZFGsRWl8gCUsaKu9fg2ZHMAkt3OH1LYnp045kFM_lCmILLP5RavcK0KrNlEC94buitLGjrcSA4nYfV1uskg7qvSmmDOIyaniSIn4OnIG61a6edVqMdtuun7XrUOWHBOoiPT8gfdqJOp9OITlut8IUF__isUS2sN8N6PYpOGq1Wp0XxmLojO64-lf6L-fIf0P9JSw)
 
 <hr>
 
@@ -260,11 +86,11 @@ python scripts/export_views.py
 The ER (Entity-Relationship) diagram visually represents how different tables in the database are related.
 
 ### Relationships
-- **One Customer → Many Orders**
+- **One Customer ➜ Many Orders**
   - Each customer can place multiple orders.
-- **One Product → Many Orders**
+- **One Product ➜ Many Orders**
   - Each product can appear in multiple orders.
-- **Orders Table → Central Table**
+- **Orders Table ➜ Central Table**
   - Serves as the main transactional table, linking customers and products.
 
 <img width="500px" title="ER Diagram" src="https://github.com/user-attachments/assets/e8767755-356f-4f92-9820-cf4438c8cbc5">
@@ -546,6 +372,158 @@ ON o.customer_id = c.customer_id
 GROUP BY c.state, p.sub_category;
 ```
 </details>
+
+<hr>
+
+## Setup
+
+### 1. Clone the Repository
+First, clone the project from GitHub to your local system.
+```bash
+git clone https://github.com/themrityunjaypathak/Dashly.git
+````
+
+### 2. Set Up a Virtual Environment
+To avoid version conflicts and keep your project isolated, create a virtual environment.
+
+On Windows :
+```bash
+python -m venv .venv
+```
+
+On macOS/Linux :
+```bash
+python3 -m venv .venv
+```
+
+### 3. Activate the Virtual Environment
+After setting up the virtual environment, activate it to begin installing dependencies.
+
+On Windows :
+```bash
+.\.venv\Scripts\activate
+```
+
+On macOS/Linux :
+```bash
+source .venv/bin/activate
+```
+
+### 4. Install the Project Dependencies
+Now, install all the required libraries inside your virtual environment using the `requirements.txt` file.
+```bash
+pip install -r requirements.txt
+```
+
+> [!TIP]
+> It's a good idea to upgrade `pip` before installing dependencies to avoid compatibility issues.
+```bash
+pip install --upgrade pip
+```
+
+> [!NOTE]
+> Use the same Python version as in `.github/workflows/etl_pipeline.yaml` to avoid compatibility issues.
+
+### 5. Setup Environment Variables
+This project uses a `.env` file to store database credentials like `DB_USER`, `DB_PASS`, `DB_NAME`, etc.
+
+Environment variables are stored in plain text.
+```ini
+# .env
+DB_HOST=host_name
+DB_NAME=database_name
+DB_USER=user_name
+DB_PASS=password
+```
+
+> [!IMPORTANT]
+> Make sure not to commit your `.env` file to GitHub or any public repositories.
+>
+> You can add it to `.gitignore` to ensure it's excluded from version control.
+
+> [!NOTE]
+> If you want to create a free Database in Neon and connect it with Python, go to [How To](#how-to) section.
+
+### 6. Database Connectivity Check
+Confirm that the PostgreSQL connection works before running ETL scripts.
+
+This avoids script crashes due to invalid credentials or blocked ports.
+
+<details>
+<summary>Click Here to view Code Snippet</summary>
+<br>
+
+```python
+# Importing Libraries
+import os
+from dotenv import load_dotenv
+from sqlalchemy import create_engine
+
+# Loading Environment File
+load_dotenv()
+
+# Loading Database Credentials from Environment File
+DB_HOST = os.getenv("DB_HOST")
+DB_NAME = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_PASS = os.getenv("DB_PASS")
+
+# Creating SQLAlchemy Engine
+engine = create_engine(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}?sslmode=require&channel_binding=require", pool_pre_ping=True)
+```
+</details>
+
+### 7. Run ETL Script
+This initializes the database and :
+- Cleans raw CSV data
+- Creates tables (`customers`, `orders`, `products`)
+- Loads data into the Neon PostgreSQL Database
+```bash
+python scripts/etl.py
+```
+
+> [!NOTE]
+> Run this only once initially or when you want a full database refresh.
+
+### 8. Create SQL Views
+This script builds reusable SQL views that summarize business metrics for the Power BI dashboard.
+
+It simplifies queries, ensures consistent logic, and improves performance.
+```bash
+python scripts/create_views.py
+```
+
+### 9. Generate New Data (Optional)
+Simulates daily transactions by generating new random data for testing pipeline automation.
+
+Helps verify how dashboards respond to new data over time.
+```bash
+python scripts/generate_data.py
+```
+
+### 10. Export Views as CSVs (Optional)
+Exports SQL view results to CSV files inside the `views/` folder.
+
+This is useful for sharing datasets or validating dashboard data without connecting to the database.
+```bash
+python scripts/export_views.py
+```
+
+### 11. Simulate Full Workflow Locally
+Running all scripts manually helps confirm everything works locally before enabling the scheduled GitHub run.
+```bash
+python scripts/etl.py
+python scripts/create_views.py
+python scripts/generate_data.py
+python scripts/export_views.py
+```
+
+### 12. Check Logs
+- Check log files inside the `logs/` folder :
+  - `etl.log` : Initial data loading
+  - `create_views.log` : SQL views creation
+  - `generate_data.log` : Daily data generation
+- Logs help you monitor pipeline performance and troubleshoot errors quickly.
 
 <hr>
 
@@ -990,7 +968,7 @@ logging.info("Views created successfully in Neon PostgreSQL Database")
   - Creates multiple SQL views to extract key business insights.
 - **Execute & Commit**
   - Executes each `CREATE OR REPLACE VIEW` statement and commits changes.
-- **Logging**
+- **Logging Setup**
   - Stores execution logs in `logs/create_views.log`.
 
 ---
@@ -1090,13 +1068,13 @@ logging.info("New data uploaded to database successfully")
   - Removes duplicates and optimizes data types before uploading to the Neon database.
 - **Append Unique Data**
   - Inserts only new records into the database, avoiding duplicates.
-- **Logging**
+- **Logging Setup**
   - Saves process logs in `logs/generate_data.log`.
 
 Once this cycle is complete, the process repeats automatically :
 
 ```
-generate_data.py → create_views.py → Power BI Refresh → New Insights
+generate_data.py ➜ create_views.py ➜ Power BI Refresh ➜ New Insights
 ```
 
 This ensures that the Power BI Dashboard always display the latest insights automatically.
@@ -1105,80 +1083,22 @@ This ensures that the Power BI Dashboard always display the latest insights auto
 
 <hr>
 
-## Workflow
-
-```mermaid
-flowchart TB
-
-  subgraph S1["1) Data Source"]
-    direction TB
-    A["Superstore CSV<br/>(sales_data.csv)"]
-  end
-
-  subgraph S2["2) ETL Pipeline<br/>(Python + SQLAlchemy)"]
-    direction TB
-    B["Extract<br/>Load Raw CSV Data"]
-    C["Transform<br/>Clean and Optimize"]
-    D["Load<br/>Insert into Neon PostgreSQL"]
-  end
-
-  subgraph S3["3) Database Layer<br/>(Neon PostgreSQL)"]
-    direction TB
-    E["Tables<br/>customers, orders, products"]
-    F["SQL Views<br/>Business Metric Views"]
-  end
-
-  subgraph S4["4) Automation<br/>(GitHub Actions)"]
-    direction TB
-    G["Scheduled Trigger<br/>cron → daily 10:00 AM"]
-    H["Run Pipeline<br/>etl.py → generate_data.py"]
-    I["Refresh Views<br/>create_views.py"]
-    J["Export Views<br/>CSV Export and Build Artifact"]
-    K["Logs & Monitoring<br/>Upload Log Artifacts"]
-  end
-
-  subgraph S5["5) Reporting<br/>(Power BI)"]
-    direction TB
-    L["Power BI connects to Views<br/>(DirectQuery)"]
-    M["Dashboard Pages<br/>Home, Overview, Customers, Products"]
-    N["Insights<br/>Sales, Profit, Region, Trends"]
-  end
-
-  %% Main data flow
-  A --> B --> C --> D --> E --> F --> L --> M --> N
-
-  %% Automation flow
-  G --> H --> I --> J --> K
-  H --> D
-  I --> F
-  F --> L
-
-  %% Minimal GitHub-safe dark styling
-  classDef block fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#ffffff;
-  classDef step  fill:#161b22,stroke:#8b949e,stroke-width:1px,color:#ffffff;
-
-  class S1,S2,S3,S4,S5 block;
-  class A,B,C,D,E,F,G,H,I,J,K,L,M,N step;
-```
-
-<hr>
-
 ## Results & Insights
 This section highlights the key outcomes and insights generated from the ETL pipeline and Power BI dashboards.
 
 ### Pipeline Performance
-It includes pipeline performance metrics such as runtime, automation frequency, and reliability.
+This section summarizes pipeline performance metrics such as runtime, automation frequency, and reliability.
 
 ### 1. Data Loading Overview
 | **Parameter**          | **Value**                         |
 | :--------------------- | :-------------------------------- |
-| **Dataset Size**       | ~50,000 rows                      |
+| **Dataset Size**       | ~50,000 sales records             |
 | **Tables Used**        | `customers`, `orders`, `products` |
-| **Avg. Daily Inserts** | ~100 records                      |
+| **Avg. Daily Inserts** | ~100 new records                  |
 | **Database**           | Neon PostgreSQL (cloud-hosted)    |
 
 > [!NOTE]
-> This setup mimics real-time superstore sales with daily updates to the `orders` and `customers` tables.
+> This setup simulates real-time superstore sales activity with daily updates to the `orders` and `customers` tables.
 
 <hr>
 
@@ -1187,9 +1107,9 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 | ----------------------- | :-------------------------------------------------- |
 | **Automation Tool**     | GitHub Actions                                      |
 | **Execution Frequency** | Daily                                               |
-| **Scheduled Time**      | 10:00 AM                                            |
+| **Scheduled Time**      | 10:00 AM IST                                        |
 | **Trigger Type**        | `cron` (automated) and `workflow_dispatch` (manual) |
-| **Runner Environment**  | `ubuntu-latest` (Linux VM)                          |
+| **Runner Environment**  | `ubuntu-latest` (GitHub-hosted Ubuntu runner)       |
 
 > [!NOTE]
 > This setup ensures that the latest data is always available for Power BI dashboards, with no manual effort.
@@ -1207,17 +1127,17 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 | **Install dependencies**             | Installs libraries from `requirements.txt`           |        22s        |
 | **Run ETL Script**                   | Extracts, transforms, and loads data into PostgreSQL |        3s         |
 | **Run Generate Data Script**         | Generates new synthetic customer and order data      |        4s         |
-| **Run Views Script**                 | Creates/refreshes analytical SQL views               |        3s         |
+| **Run Views Script**                 | Creates / Refreshes analytical SQL views             |        3s         |
 | **Run Export Views Script**          | Exports SQL views as CSV files                       |        2s         |
 | **Upload Exported CSV as Artifacts** | Uploads exported CSVs to GitHub Actions artifacts    |        2s         |
 | **Commit and Push CSVs**             | Commits CSV files to the repository                  |        0s         |
 | **Upload Logs as Artifacts**         | Uploads log files for debugging and tracking         |        1s         |
-| **Post Setup/Cleanup Steps**         | Cleans the environment post-run                      |        2s         |
+| **Post Setup / Cleanup Steps**       | Cleans the environment post-run                      |        2s         |
 
 > [!NOTE]
-> **Total runtime :** ~40–50 seconds per pipeline run
+> **Total runtime :** ~45–50 seconds per pipeline run
 > 
-> **Scheduling :** The workflow is scheduled via `cron` (`30 4 * * *`), meaning it runs daily at **10:00 AM**.
+> **Scheduling :** The workflow runs daily at **10:00 AM IST** using a `cron` schedule (`30 4 * * *`).
 >
 > `cron` is in UTC (04:30 UTC = 10:00 AM IST)
 > 
@@ -1228,12 +1148,12 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 <hr>
 
 ### 4. Error Handling and Logging
-| **Aspect**         | **Implementation Details**                                            |
-| :----------------- | :-------------------------------------------------------------------- |
-| **Error Tracking** | `try-except` blocks in each script                                    |
-| **Log Files**      | `etl.log`, `generate_data.log`, `create_views.log`                    |
-| **Log Storage**    | Uploaded as GitHub Actions artifacts                                  |
-| **Security**       | All credentials stored in GitHub Secrets (`DB_USER`, `DB_PASS`, etc)  |
+| **Aspect**         | **Implementation Details**                                                     |
+| :----------------- | :----------------------------------------------------------------------------- |
+| **Error Tracking** | Structured `try–except` error handling in each script                          |
+| **Log Files**      | `etl.log`, `generate_data.log`, `create_views.log`                             |
+| **Log Storage**    | Uploaded as GitHub Actions run artifacts                                       |
+| **Security**       | All credentials securely stored in GitHub Secrets (`DB_USER`, `DB_PASS`, etc.) |
 
 > [!TIP]
 > Automated logging and secret handling remove the need for manual checks and ensure smooth workflow runs.
@@ -1241,21 +1161,22 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 <hr>
 
 ### 5. Reliability and Stability
-| **Metric**                | **Value**          | **Remarks**                                |
-| :------------------------ | :----------------- | :----------------------------------------- |
-| **Total Runtime**         | ~40 seconds        | Fast for daily automated ETL               |
-| **Success Rate**          | 100% (last 8 runs) | Verified via GitHub Actions workflow panel |
-| **Avg. Records Inserted** | ~100 rows/day      | Lightweight daily updates                  |
-| **Resource Utilization**  | Low CPU/Memory     | Efficient for cloud runners                |
+| **Metric**                | **Value**                | **Remarks**                                |
+| :------------------------ | :----------------------- | :----------------------------------------- |
+| **Total Runtime**         | ~48 seconds              | Fast for a daily automated ETL pipeline    |
+| **Success Rate**          | 100% (till last run)     | Verified via GitHub Actions workflow panel |
+| **Avg. Records Inserted** | ~100 rows/day            | Lightweight daily incremental updates      |
+| **Resource Utilization**  | Low CPU and memory usage | Efficient for cloud runners                |
 
 > [!IMPORTANT]
-> The pipeline runs fully unattended, providing consistent daily data updates and automatic Power BI refreshes.
+> The pipeline runs fully unattended, ensuring consistent daily data updates and automatic Power BI refreshes.
 
 <img title="Reliability and Stability" src="https://github.com/user-attachments/assets/20dbee9f-b68e-4a1a-b512-4ed7f443d587">
 
 <hr>
 
 ### Dashboard Metrics
+This section highlights key business insights and trends derived from the Power BI dashboard visualizations.
 
 ### 1. Shipping Mode Performance
 | **Shipping Mode** | **Total Sales (₹)** | **% of Total Sales** | **Total Profit (₹)** | **% of Total Profit** | **Profit Margin** |
@@ -1291,9 +1212,8 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 &nbsp;
 
 - Consumer Segment is the main revenue driver, generating ~50% of total sales (~₹4.26M) and profit (~₹757K).
-- Corporate Segment contributes ~32% of sales (~₹2.74M) and profit (~₹476K), showing steady B2B growth.
+- Corporate Segment contributes ~32% of sales (~₹2.74M) and profit (~₹476K), indicating steady performance.
 - Home Office delivers ~18% of revenue (~₹1.53M) and profit (~₹266K), smaller but reliable.
-- Profit margins remain consistent across segments, indicating balanced pricing and operational control.
 - Potential growth opportunity lies in expanding Home Office sales through targeted marketing.
 
 </details>
@@ -1321,9 +1241,9 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 &nbsp;
 
 - Q4 (Oct–Dec) drives ~27% of annual sales and profit, making it the strongest quarter for promotions.
-- Profit margins stay steady at ~17–18% throughout the year, indicating consistent pricing and good cost control.
-- March and December are peak months, ideal for running marketing campaigns and seasonal offers.
-- Sales and profit remain balanced across months, reflecting stable and predictable business performance.
+- Profit margins stay steady at ~17–18% throughout the year, indicating consistent pricing and cost control.
+- December and March are peak months by sales contribution, ideal for marketing campaigns and seasonal offers.
+- Sales and profit are evenly distributed across months, reflecting stable and predictable performance.
 
 </details>
 
@@ -1345,7 +1265,6 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 - East contributes ~29% of sales (~₹2.46M) and ~28% of profit (~₹428K), showing strong and balanced growth.
 - Central adds ~23% of revenue (~₹1.99M) and profit (~₹352K), reflecting steady mid-level performance.
 - South accounts for ~19% of revenue (~₹1.61M) and profit (~₹279K), highlighting a key growth opportunity.
-- Profit margins remain consistent across regions (~17–18%), indicating stable operations.
 
 </details>
 
@@ -1369,8 +1288,8 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 &nbsp;
 
 - Paper is the top-performing sub-category, contributing ~15% of total sales (~₹1.26M) and profit (~₹223K).
-- Binders, Phones, and Furnishings contributed to ~31% of profit (~₹2.66M), forming the high-performing cluster.
-- Art, Storage, and Accessories are solid mid-tier performers, keeping profit margins stable around ~17–18%.
+- Binders, Phones, and Furnishings contribute ~31% of total profit (~₹467K), forming the high-performing cluster.
+- Art, Storage, and Accessories are solid mid-tier performers, contributing ~23% of total profit combined.
 - Sub-categories like Copiers and Supplies contribute <5% of total profit, showing limited business impact.
 - Scaling high-value categories (Paper, Phones, Furnishings) can boost revenue while maintaining stable margins.
 
@@ -1378,7 +1297,7 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 
 <hr>
 
-### 6. State-wise Sales Performance (Top 5 States)
+### 6. State-wise Sales Performance
 | **State**    | **Total Sales (₹)** | **Total Customers** | **% of Total Sales** |
 | :----------- | ------------------: | ------------------: | -------------------: |
 | California   |           1,792,545 |                 188 |            **21.4%** |
@@ -1392,8 +1311,8 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 &nbsp;
 
 - California leads with ~21% sales (~₹1.8M) and the highest customer base (188), making it the strongest market.
-- New York + Texas contribute ~22% sales (~₹1.8M), showing strong demand in high-density regions.
-- Top 5 states generate ~54% revenue (~₹4.5M), highlighting sales concentration in key markets.
+- New York + Texas contribute ~22% of total sales (~₹1.83M), indicating strong demand in dense regions.
+- Top 5 states generate ~54% of total revenue (~₹4.54M), highlighting sales concentration in key markets.
 
 </details>
 
@@ -1416,7 +1335,7 @@ It includes pipeline performance metrics such as runtime, automation frequency, 
 <img title="Neon" src="https://github.com/user-attachments/assets/4a5b08e6-290b-4fb7-9820-3afd0b599e03">
 &nbsp;
 
-- Log in using GitHub/Google/Microsoft.
+- Log in using GitHub / Google / Microsoft.
 <img title="Login" src="https://github.com/user-attachments/assets/657ccfaa-3c26-492a-9a5f-537f773c763e">
 &nbsp;
 
@@ -1453,6 +1372,11 @@ postgresql://alex:AbC123dEf@ep-cool-darkness-a1b2c3d4-pooler.us-east-2.aws.neon.
 You can use this to configure your database connection.
 
 You can place the connection details in an `.env` file for secure access.
+
+<details>
+  <summary>Click Here to view Sample ENV File</summary>
+  &nbsp;
+  
 ```ini
 # .env file
 DB_HOST=ep-cool-darkness-a1b2c3d4-pooler.us-east-2.aws.neon.tech
@@ -1460,7 +1384,15 @@ DB_NAME=dbname
 DB_USER=alex
 DB_PASS=AbC123dEf
 ```
+
+</details>
+
 After placing connection details in an `.env` file, you can read it via Python using SQLAlchemy.
+
+<details>
+  <summary>Click Here to view Code Snippet</summary>
+  &nbsp;
+
 ```python
 # Importing Libraries
 from dotenv import load_dotenv
@@ -1478,6 +1410,7 @@ DB_PASS = os.getenv("DB_PASS")
 # Creating SQLAlchemy Engine to upload the Data to Neon PostgreSQL Database
 engine = create_engine(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}?sslmode=require&channel_binding=require", pool_pre_ping=True)
 ```
+</details>
 
 <hr>
 
@@ -1533,7 +1466,7 @@ DB_NAME=dbname
 
 ### 4. How to configure GitHub Actions?
 - Open [GitHub](https://github.com/) in your browser.
-- Navigate to the repository that contains your workflow file (`.github/workflows/etl_pipeline.yml`).
+- Navigate to the repository that contains your workflow file (`.github/workflows/etl_pipeline.yaml`).
 - This is where your ETL (Extract-Transform-Load) automation is defined.
 - On your repository's main page click Settings from the top navigation bar.
 <img title="Repository's Settings Page" src="https://github.com/user-attachments/assets/55764fbc-2ec2-43e1-befa-3895c2c05d84">
@@ -1554,13 +1487,13 @@ DB_NAME=dbname
   - Name : the key (`DATABASE_URL`)
   - Value : the corresponding value (`postgres://user:pass@host/db`)
 - Paste these into the GitHub form fields :
-  - Name → enter the variable name
-  - Secret → enter the variable value
+  - Name ➜ enter the variable name
+  - Secret ➜ enter the variable value
 <img title="Add New Secret" src="https://github.com/user-attachments/assets/1e701c66-ec31-4c0e-8fb8-21220b4f551f">
 &nbsp;
 
 - Your secrets are now securely stored in the repository.
-- You can use them inside your workflow `.github/workflows/etl_pipeline.yml` like this :
+- You can use them inside your workflow `.github/workflows/etl_pipeline.yaml` like this :
 ```bash
 DB_USER: ${{ secrets.DB_USER }}
 DB_PASS: ${{ secrets.DB_PASS }}
@@ -1673,6 +1606,9 @@ jobs:
           path: logs/*.log
 ```
 </details>
+
+<details>
+<summary>Click Here to view more Details</summary>
 
 ### Workflow Overview
 
@@ -1821,6 +1757,8 @@ jobs:
 ```
 - Uploads all log files as artifacts, useful for debugging or checking workflow results.
 
+</details>
+
 <hr>
 
 ## Power BI Dashboard
@@ -1831,7 +1769,10 @@ jobs:
 
 ### 1. Home Page
 - This page serves as an entry point and navigation hub for the dashboard.
-  
+
+<details>
+<summary>Click Here to view more Details</summary>
+
 ### Key Components
 - **Navigation Buttons**
   - Interactive page navigator that links to the Overview, Customers, and Products pages.
@@ -1840,13 +1781,16 @@ jobs:
 - **User Experience**
   - Designed for clarity and smooth navigation so users can access key insights in one click.
 
+</details>
+
 <img title="Home" src="https://github.com/user-attachments/assets/a15b8d82-a886-492f-af40-3d8d25ea22ad">
 
-<hr>
-
 ### 2. Overview
-- This page focuses on a high-level summary of overall business performance like orders, customers and products.
-  
+- This page focuses on a high-level summary of overall business performance like orders, customers, and products.
+
+<details>
+<summary>Click Here to view more Details</summary>
+
 ### Key Components
 - **Multi-Row Cards : Key Business Metrics**
   - Data View : `overall_sales_performance`
@@ -1867,12 +1811,15 @@ jobs:
   - Data View : `month_wise_sales_and_profit`
   - Purpose : Displays month-wise trends of sales and profit to track seasonal performance and growth.
 
-<img title="Overview" src="https://github.com/user-attachments/assets/5584efcc-c10a-40c0-b18c-18e907ea64df">
+</details>
 
-<hr>
+<img title="Overview" src="https://github.com/user-attachments/assets/5584efcc-c10a-40c0-b18c-18e907ea64df">
 
 ### 3. Customers
 - This page focuses on understanding customer behavior, performance, and geographic distribution.
+
+<details>
+<summary>Click Here to view more Details</summary>
 
 ### Key Components
 - **Multi-Row Card : Customer Performance Summary**
@@ -1891,13 +1838,16 @@ jobs:
   - Data View : `segment_wise_monthly_sales_and_profit`
   - Purpose : Visualizes monthly trends of sales and profit across customer segments.
 
-<img title="Customers" src="https://github.com/user-attachments/assets/fd6944a8-59af-43e3-a78d-18b1f92386a4">
+</details>
 
-<hr>
+<img title="Customers" src="https://github.com/user-attachments/assets/fd6944a8-59af-43e3-a78d-18b1f92386a4">
 
 ### 4. Products
 - This page focuses on analyzing product performance, category trends, and geographic purchasing behavior.
-  
+
+<details>
+<summary>Click Here to view more Details</summary>
+
 ### Key Components
 - **Filled Map : State-wise Most Purchased Sub-category**
   - Data View : `state_wise_most_purchased_sub_category`
@@ -1924,9 +1874,11 @@ jobs:
   - Purpose :
     - Tracks the current profit margin against the target (30%).
   - Color Logic :
-    - Red (0–10%) → Low profit margin, needs improvement.
-    - Yellow (10–20%) → Moderate margin, progressing toward target.
-    - Green (20–40%) → Healthy profit margin, close to or exceeding target.
+    - Red (0–10%) ➜ Low profit margin, needs improvement.
+    - Yellow (10–20%) ➜ Moderate margin, progressing toward target.
+    - Green (20–40%) ➜ Healthy profit margin, close to or exceeding target.
+
+</details>
 
 <img title="Products" src="https://github.com/user-attachments/assets/ccf6f4ad-4498-4d0b-9284-0c60feeb19c2">
 
@@ -1939,10 +1891,10 @@ Dashly/
 |
 ├── .github/
 │   └── workflows/
-│       └── etl_pipeline.yml         # GitHub Actions Workflow File
+│       └── etl_pipeline.yaml        # GitHub Actions Workflow File
 │
 ├── scripts/
-│   ├── etl.py                       # Extract, Transform & Load Initial Data
+│   ├── etl.py                       # Script to extract, transform, and load Initial Data
 │   ├── generate_data.py             # Script to generate and append New Random Data
 │   ├── create_views.py              # Script to create or refresh SQL Views in PostgreSQL Database
 │   └── export_views.py              # Script to export SQL Views results as CSV File
@@ -1955,7 +1907,7 @@ Dashly/
 │   └── views.sql                    # SQL Views
 │
 ├── views/
-│   ├── shipping_performance.csv     # Exported Views as CSV Files
+│   ├── shipping_performance.csv     # Exported SQL Views as CSV Files
 │   └── ...
 |
 ├── images/
