@@ -41,6 +41,7 @@
 - [ETL Pipeline](#etl-pipeline)
 - [Results & Insights](#results--insights)
 - [Impact](#impact)
+- [Key Insights](#key-insights)
 - [How To](#how-to)
 - [GitHub Actions](#github-actions)
 - [Power BI Dashboard](#power-bi-dashboard)
@@ -71,7 +72,7 @@ Currently, the store relies heavily on multiple spreadsheets and manual SQL quer
 ## Overview
 - Designed a fully automated ETL pipeline using Python, SQLAlchemy and GitHub Actions for daily data updates.
 - Built Python ETL scripts to extract, transform and load 50,000+ sales records into a Neon PostgreSQL database.
-- Automated daily data generation (~100 new transactions daily) to simulate real-time sales activity.
+- Simulated ~100 new transactions daily to replicate ongoing business activity and test pipeline reliability.
 - Integrated Power BI with the database, enabling a real-time, auto-refreshing dashboard without manual updates.
 
 <hr>
@@ -1320,11 +1321,20 @@ This section highlights key business insights and trends derived from the Power 
 
 ## Impact
 
-- Built an end-to-end Power BI dashboard connected to a PostgreSQL database containing 50,000+ sales records.
-- Improved daily data update time from hours to under a minute (average ~45 sec) using GitHub Actions.
-- Reduced reporting time by 80% through automation, delivering updated insights in under a minute.
-- Delivered a reliable, low-latency, fully automated data pipeline with zero manual intervention.
-- Achieved 100% workflow reliability, with zero pipeline failures since deployment (as recorded in GitHub Actions).
+- Improved daily data update time from hours to under a minute (average ~45 seconds) using GitHub Actions.
+- Reduced reporting time by 80% through automation, enabling faster tracking of revenue and profit performance.
+- Achieved 100% workflow reliability with zero pipeline failures since deployment (as recorded in GitHub Actions).
+
+<hr>
+
+## Key Insights
+
+- Standard Class drives ~60% of sales (₹5.1M) and profit (₹897K), making it the most profitable shipping mode.
+- Consumer Segment generates ~50% of revenue (~₹4.26M) and profit (~₹757K), our primary customer base.
+- Q4 (Oct–Dec) contributes ~27% of annual revenue, indicating strong seasonal demand, ideal for promotions.
+- Paper, Binders, and Phones are the top-performing sub-categories, together making up ~45% of total revenue.
+- West and East regions lead with ~58% of total sales, while the South with ~19% shows strong growth potential.
+- Top 5 States (CA, NY, TX, PA, OH) generates ~54% of total sales, with CA alone contributing ~21% of sales.
 
 <hr>
 
