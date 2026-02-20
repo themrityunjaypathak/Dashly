@@ -1,30 +1,15 @@
 <h2 align="center">Dashly : Live Sales Dashboard</h2>
 
-<p align="center">
-  <a href="https://app.powerbi.com/view?r=eyJrIjoiZTgxODBhYmMtYjc1Zi00YjVkLWIyZDItZDYxY2RjZmIwNGY5IiwidCI6ImZhYjAyYzVkLTYxYjYtNGIxMi05ZTY2LTdhMDhkOWY0ZmNjMSJ9&pageName=5b9aaf645951a59cacdc" target="_blank">
-    <img src="https://img.shields.io/badge/Live%20Demo-Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black" />
-  </a>
+<div align="center">
 
-  <a href="https://www.python.org/" target="_blank">
-    <img src="https://img.shields.io/badge/Python-v3.13-3776AB?style=flat&logo=python&logoColor=white" />
-  </a>
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black)](https://app.powerbi.com/view?r=eyJrIjoiZTgxODBhYmMtYjc1Zi00YjVkLWIyZDItZDYxY2RjZmIwNGY5IiwidCI6ImZhYjAyYzVkLTYxYjYtNGIxMi05ZTY2LTdhMDhkOWY0ZmNjMSJ9&pageName=5b9aaf645951a59cacdc)
+[![Python](https://img.shields.io/badge/Python-v3.13-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-v2.0-D71F00?style=flat&logo=sqlalchemy&logoColor=white)](https://www.sqlalchemy.org/)
+[![Git](https://img.shields.io/badge/Git-v2.47-F05032?style=flat&logo=git&logoColor=white)](https://git-scm.com/)
+[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/TheMrityunjayPathak/Dashly/etl_pipeline.yaml?style=flat&label=GitHub%20Actions&logo=githubactions&logoColor=white)](https://github.com/themrityunjaypathak/Dashly/actions/workflows/etl_pipeline.yaml)
 
-  <a href="https://www.postgresql.org/" target="_blank">
-    <img src="https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=flat&logo=postgresql&logoColor=white" />
-  </a>
-
-  <a href="https://www.sqlalchemy.org/" target="_blank">
-    <img src="https://img.shields.io/badge/SQLAlchemy-v2.0-D71F00?style=flat&logo=sqlalchemy&logoColor=white" />
-  </a>
-
-  <a href="https://git-scm.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Git-v2.47-F05032?style=flat&logo=git&logoColor=white" />
-  </a>
-
-  <a href="https://github.com/themrityunjaypathak/Dashly/actions/workflows/etl_pipeline.yaml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/TheMrityunjayPathak/Dashly/etl_pipeline.yaml?style=flat&label=GitHub%20Actions&logo=githubactions&logoColor=white" />
-  </a>
-</p>
+</div>
 
 <a href="https://app.powerbi.com/view?r=eyJrIjoiZTgxODBhYmMtYjc1Zi00YjVkLWIyZDItZDYxY2RjZmIwNGY5IiwidCI6ImZhYjAyYzVkLTYxYjYtNGIxMi05ZTY2LTdhMDhkOWY0ZmNjMSJ9&pageName=5b9aaf645951a59cacdc">
   <img title="Dashly" src="https://github.com/user-attachments/assets/be84d954-9d52-4692-8a77-d40853a91d61">
