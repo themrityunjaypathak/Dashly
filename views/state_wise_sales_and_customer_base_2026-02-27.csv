@@ -2,22 +2,22 @@ state,total_sales,total_customers
 Alabama,79551.0,37
 Arizona,319301.0,102
 Arkansas,68245.0,9
-California,2501792.0,777
-Colorado,281637.0,99
+California,2510186.0,782
+Colorado,282799.0,101
 Connecticut,108738.0,38
 Delaware,93254.0,30
 District of Columbia,8663.0,3
-Florida,479987.0,136
-Georgia,163437.0,69
-Illinois,617767.0,204
-Indiana,152351.0,53
+Florida,481502.0,138
+Georgia,164579.0,70
+Illinois,618929.0,206
+Indiana,153169.0,54
 Iowa,18676.0,11
 Kansas,36048.0,5
-Kentucky,292654.0,75
+Kentucky,292999.0,76
 Louisiana,60248.0,25
 Maryland,29756.0,10
 Massachusetts,146022.0,50
-Michigan,231613.0,75
+Michigan,232597.0,76
 Minnesota,203214.0,60
 Mississippi,77725.0,23
 Missouri,83625.0,35
@@ -25,18 +25,18 @@ Nebraska,3838.0,4
 Nevada,27126.0,7
 New Hampshire,27076.0,8
 New Jersey,183973.0,54
-New Mexico,23855.0,16
-New York,1232196.0,396
-North Carolina,377731.0,147
+New Mexico,24441.0,17
+New York,1233692.0,399
+North Carolina,383240.0,151
 Ohio,578009.0,185
 Oklahoma,45979.0,14
 Oregon,45452.0,12
-Pennsylvania,638912.0,222
+Pennsylvania,639496.0,224
 Rhode Island,64919.0,21
 South Dakota,2937.0,3
 Tennessee,177340.0,57
-Texas,1211177.0,368
+Texas,1213589.0,372
 Utah,60117.0,23
 Virginia,255770.0,67
-Washington,584584.0,196
+Washington,586241.0,197
 Wisconsin,91028.0,45
