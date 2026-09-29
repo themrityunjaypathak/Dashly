@@ -49,34 +49,34 @@ Arkansas,Envelopes,16,13
 Arkansas,Machines,12,14
 Arkansas,Supplies,7,15
 Arkansas,Bookcases,5,16
-California,Paper,4976,1
-California,Binders,3668,2
-California,Phones,3475,3
-California,Furnishings,3228,4
-California,Art,3004,5
+California,Paper,4990,1
+California,Binders,3677,2
+California,Phones,3489,3
+California,Furnishings,3233,4
+California,Art,3020,5
 California,Accessories,2622,6
-California,Storage,2383,7
-California,Appliances,1862,8
-California,Chairs,1615,9
+California,Storage,2388,7
+California,Appliances,1865,8
+California,Chairs,1623,9
 California,Labels,1286,10
-California,Machines,1208,11
+California,Machines,1215,11
 California,Envelopes,1063,12
-California,Tables,1014,13
+California,Tables,1020,13
 California,Bookcases,915,14
-California,Fasteners,810,15
-California,Supplies,715,16
+California,Fasteners,812,15
+California,Supplies,720,16
 California,Copiers,241,17
-Colorado,Paper,544,1
+Colorado,Paper,548,1
 Colorado,Binders,537,2
 Colorado,Furnishings,455,3
-Colorado,Phones,409,4
-Colorado,Art,401,5
+Colorado,Phones,412,4
+Colorado,Art,409,5
 Colorado,Storage,340,6
 Colorado,Accessories,325,7
 Colorado,Appliances,227,8
 Colorado,Envelopes,190,9
-Colorado,Machines,171,10
-Colorado,Chairs,168,11
+Colorado,Chairs,174,10
+Colorado,Machines,171,11
 Colorado,Labels,167,12
 Colorado,Tables,141,13
 Colorado,Bookcases,120,14
@@ -86,10 +86,10 @@ Colorado,Copiers,27,17
 Connecticut,Paper,185,1
 Connecticut,Phones,150,2
 Connecticut,Art,144,3
-Connecticut,Binders,112,4
+Connecticut,Binders,118,4
 Connecticut,Accessories,103,5
 Connecticut,Furnishings,101,6
-Connecticut,Storage,73,7
+Connecticut,Storage,76,7
 Connecticut,Chairs,69,8
 Connecticut,Appliances,60,9
 Connecticut,Machines,59,10
@@ -133,12 +133,12 @@ District of Columbia,Fasteners,7,13
 District of Columbia,Bookcases,5,14
 District of Columbia,Machines,3,15
 Florida,Paper,951,1
-Florida,Binders,694,2
+Florida,Binders,701,2
 Florida,Furnishings,688,3
 Florida,Phones,571,4
 Florida,Art,521,5
 Florida,Accessories,506,6
-Florida,Storage,396,7
+Florida,Storage,404,7
 Florida,Appliances,330,8
 Florida,Chairs,306,9
 Florida,Labels,267,10
@@ -303,10 +303,10 @@ Massachusetts,Copiers,13,17
 Michigan,Phones,397,1
 Michigan,Paper,385,2
 Michigan,Binders,337,3
-Michigan,Art,297,4
+Michigan,Art,301,4
 Michigan,Furnishings,262,5
 Michigan,Accessories,237,6
-Michigan,Storage,230,7
+Michigan,Storage,234,7
 Michigan,Appliances,221,8
 Michigan,Labels,164,9
 Michigan,Chairs,138,10
@@ -413,11 +413,11 @@ New Hampshire,Supplies,16,14
 New Hampshire,Envelopes,14,15
 New Hampshire,Labels,6,16
 New Jersey,Paper,499,1
-New Jersey,Binders,392,2
+New Jersey,Binders,393,2
 New Jersey,Phones,265,3
 New Jersey,Storage,244,4
-New Jersey,Accessories,229,5
-New Jersey,Art,229,5
+New Jersey,Art,231,5
+New Jersey,Accessories,229,6
 New Jersey,Furnishings,221,7
 New Jersey,Appliances,172,8
 New Jersey,Chairs,122,9
@@ -447,23 +447,23 @@ New Mexico,Envelopes,5,15
 New Mexico,Copiers,3,16
 New Mexico,Bookcases,3,16
 New York,Paper,2370,1
-New York,Binders,2043,2
-New York,Phones,1769,3
-New York,Furnishings,1708,4
+New York,Binders,2055,2
+New York,Phones,1774,3
+New York,Furnishings,1719,4
 New York,Art,1559,5
 New York,Accessories,1471,6
 New York,Storage,1146,7
 New York,Chairs,853,8
 New York,Appliances,797,9
 New York,Labels,710,10
-New York,Machines,526,11
+New York,Machines,529,11
 New York,Tables,503,12
 New York,Bookcases,485,13
 New York,Envelopes,427,14
-New York,Fasteners,399,15
+New York,Fasteners,401,15
 New York,Supplies,303,16
 New York,Copiers,89,17
-North Carolina,Paper,787,1
+North Carolina,Paper,792,1
 North Carolina,Binders,627,2
 North Carolina,Phones,545,3
 North Carolina,Furnishings,508,4
@@ -471,7 +471,7 @@ North Carolina,Art,506,5
 North Carolina,Accessories,384,6
 North Carolina,Storage,367,7
 North Carolina,Chairs,303,8
-North Carolina,Labels,285,9
+North Carolina,Labels,287,9
 North Carolina,Appliances,227,10
 North Carolina,Machines,195,11
 North Carolina,Envelopes,164,12
@@ -482,15 +482,15 @@ North Carolina,Supplies,108,16
 North Carolina,Copiers,25,17
 Ohio,Paper,1277,1
 Ohio,Phones,993,2
+Ohio,Furnishings,944,3
 Ohio,Binders,944,3
-Ohio,Furnishings,943,4
 Ohio,Art,721,5
 Ohio,Accessories,647,6
 Ohio,Storage,561,7
 Ohio,Appliances,487,8
 Ohio,Chairs,357,9
 Ohio,Labels,334,10
-Ohio,Machines,327,11
+Ohio,Machines,331,11
 Ohio,Tables,250,12
 Ohio,Bookcases,206,13
 Ohio,Supplies,195,14
@@ -529,19 +529,19 @@ Oregon,Envelopes,5,13
 Oregon,Supplies,4,14
 Oregon,Bookcases,4,14
 Oregon,Tables,3,16
-Pennsylvania,Paper,1315,1
+Pennsylvania,Paper,1322,1
 Pennsylvania,Binders,1082,2
 Pennsylvania,Phones,983,3
-Pennsylvania,Furnishings,821,4
+Pennsylvania,Furnishings,824,4
 Pennsylvania,Accessories,792,5
 Pennsylvania,Art,741,6
-Pennsylvania,Storage,646,7
-Pennsylvania,Appliances,497,8
+Pennsylvania,Storage,653,7
+Pennsylvania,Appliances,498,8
 Pennsylvania,Labels,384,9
 Pennsylvania,Machines,365,10
 Pennsylvania,Chairs,365,10
 Pennsylvania,Bookcases,289,12
-Pennsylvania,Fasteners,273,13
+Pennsylvania,Fasteners,274,13
 Pennsylvania,Tables,269,14
 Pennsylvania,Envelopes,238,15
 Pennsylvania,Supplies,172,16
@@ -593,20 +593,20 @@ Tennessee,Supplies,46,15
 Tennessee,Fasteners,33,16
 Tennessee,Copiers,19,17
 Texas,Paper,2361,1
-Texas,Furnishings,1741,2
-Texas,Binders,1693,3
-Texas,Phones,1550,4
-Texas,Accessories,1377,5
+Texas,Furnishings,1743,2
+Texas,Binders,1700,3
+Texas,Phones,1557,4
+Texas,Accessories,1386,5
 Texas,Art,1219,6
 Texas,Storage,1207,7
 Texas,Chairs,800,8
-Texas,Appliances,754,9
+Texas,Appliances,757,9
 Texas,Labels,654,10
-Texas,Machines,618,11
-Texas,Tables,478,12
+Texas,Machines,625,11
+Texas,Tables,485,12
 Texas,Bookcases,470,13
-Texas,Envelopes,416,14
-Texas,Supplies,344,15
+Texas,Envelopes,421,14
+Texas,Supplies,350,15
 Texas,Fasteners,311,16
 Texas,Copiers,98,17
 Utah,Paper,143,1
@@ -628,13 +628,13 @@ Utah,Tables,16,16
 Utah,Copiers,3,17
 Virginia,Paper,561,1
 Virginia,Binders,413,2
-Virginia,Phones,371,3
+Virginia,Phones,373,3
 Virginia,Furnishings,302,4
-Virginia,Accessories,293,5
+Virginia,Accessories,296,5
 Virginia,Storage,271,6
 Virginia,Art,251,7
 Virginia,Tables,153,8
-Virginia,Appliances,140,9
+Virginia,Appliances,143,9
 Virginia,Labels,117,10
 Virginia,Supplies,116,11
 Virginia,Envelopes,115,12
@@ -649,11 +649,11 @@ Washington,Furnishings,831,3
 Washington,Art,716,4
 Washington,Phones,698,5
 Washington,Accessories,521,6
-Washington,Storage,503,7
+Washington,Storage,510,7
 Washington,Appliances,464,8
 Washington,Chairs,383,9
 Washington,Labels,337,10
-Washington,Machines,322,11
+Washington,Machines,326,11
 Washington,Tables,254,12
 Washington,Envelopes,249,13
 Washington,Bookcases,239,14
